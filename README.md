@@ -1,10 +1,12 @@
 # JADS Discover Machine Learning projects
 
 ## A selection of 'discovery projects' for getting hands-on experience in machine learning
-This repository was developed as part of the Discover track at the [Jheronimus Academy of Data Science (JADS)](https://www.jads.nl/professionaleducation.html). The aim of these 'discovery projects' is to facilitate the participants in getting hands-on experience in building a model following the CRISP-DM framework. Learning-by-doing is arguably the best way to get through the valley of despair as quickly as possible.
+This repository was developed as part of the Discover track at the [Jheronimus Academy of Data Science (JADS)](https://www.jads.nl/professionaleducation.html). The aim of these 'discovery projects' is to facilitate the participants in getting hands-on experience in building a model following the CRISP-DM framework. Learning-by-doing is arguably the best way to get through the [valley of despair](https://mensenengedrag.nl/2019/06/05/the-dunning-kruger-effect-in-innovation/) as quickly as possible.
 
 ![CRISP-DM framework](https://exde.files.wordpress.com/2009/03/crisp_visualguide.png?w=768)
 
-## 
+## A curated selection of public datasets, notebooks, articles and other stuff from the commons
+[Made with the creative commons in mind](https://creativecommons.org/use-remix/made-with-cc/), we have used and remixed what we think are the most useful datasets, notebooks, articles available in the public domain. Each folder contains a set of materials for a given dataset, with specific assignments and questions. Examples of solutions and best practices are included in R and Python notebooks. In due course we aim to add [H2O Flow](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/flow.html) for those preferring to work using a graphical UI.
 
-It contains a selection of public datasets including worked out examples (notebooks) in R, Python and H2) Flow. 
+  - [Ames Housing dataset by Dean de Kock (2011)](http://jse.amstat.org/v19n3/decock.pdf): an alternative, more detailed and rich dataset than the Boston housing dataset (which dates from 1978). Available on [Kaggle](https://www.kaggle.com/prevek18/ames-housing-dataset) and via the [AmesHousing R package](https://cran.r-project.org/web/packages/AmesHousing/AmesHousing.pdf).
+  - [UCI Heart Disease dataset](https://archive.ics.uci.edu/ml/datasets/heart+disease): Four combined databases compiling heart disease information. This database contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In particular, the Cleveland database is the only one that has been used by ML researchers to this date. The "goal" field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4. Also available on [Kaggle](https://www.kaggle.com/ronitf/heart-disease-uci), [data.world](https://data.world/uci/heart-disease) and included in the [kmed R package](https://cran.r-project.org/web/packages/kmed/index.html)
