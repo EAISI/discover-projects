@@ -17,7 +17,7 @@ The dataset has the following characteristics:
 6.	some columns have constant values 
 
 
-## Objective
+## Tasms
 The SECOM dataset presents us with two problems, namely
 
 1. Working with skewed data, i.e. an imbalanced classification problem (see <a href="#ref1">[1]</a>)
