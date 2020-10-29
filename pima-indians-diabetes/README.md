@@ -24,6 +24,7 @@ Outcome: Class variable (0 or 1)
 
 ## Acknowledgements
 **Spoiler alert:** the links below contain solutions to this project. Make sure you have tried your best before snooping.
+  - [PIR's complete ML pipeline tutorial](https://www.kaggle.com/pouryaayria/a-complete-ml-pipeline-tutorial-acu-86)
   - [Ashwini Swain's](https://www.kaggle.com/ash316) has written a [notebook with a comprehensive explaination](https://www.kaggle.com/ash316/ml-from-scratch-part-2)
   - [Parul Pandey's](https://www.kaggle.com/parulpandey) notebook with an excellent explanation of [interpreting machine learning models](https://www.kaggle.com/parulpandey/intrepreting-machine-learning-models).
 
