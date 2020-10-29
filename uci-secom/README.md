@@ -21,7 +21,7 @@ The dataset has the following characteristics:
 The SECOM dataset presents us with two problems, namely
 
 1. Working with skewed data, i.e. an imbalanced classification problem (see <a href="#ref1">[1]</a>)
-2. Feature selection (see <a href="#ref2">[1]</a>)
+2. Feature selection (see <a href="#ref2">[2]</a>)
 
 In this project, you will explore both tasks.
 
@@ -36,6 +36,7 @@ A secondary objective will be feature reduction. A streamlined feature set can n
 
 ## Further reading
 <a name="ref1"></a>[1] [H. He and E. A. Garcia, “Learning from Imbalanced Data,” IEEE Trans. Knowledge and Data Engineering, vol. 21, issue 9, pp. 1263-1284, 2009.](http://www.ele.uri.edu/faculty/he/PDFfiles/ImbalancedLearning.pdf)
+
 <a name="ref2"></a>[2] [McCann, Michael, et al. "Causality Challenge: Benchmarking relevant signal components for effective monitoring and process control." NIPS Causality: Objectives and Assessment.2010.](https://scholar.google.com/scholar?cluster=9582225450011234329&hl=en&as_sdt=0,5&sciodt=0,5)  
 
 
