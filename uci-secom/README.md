@@ -34,7 +34,7 @@ In this project, you will explore both tasks.
 A secondary objective will be feature reduction. A streamlined feature set can not only lead to better prediction accuracy and data understanding but also save manufacturing resources. Explore causal understanding of the manufacturing process using the 590 features.
 
 
-## Further reading
+### Further reading
 <a name="ref1"></a>[1] [H. He and E. A. Garcia, “Learning from Imbalanced Data,” IEEE Trans. Knowledge and Data Engineering, vol. 21, issue 9, pp. 1263-1284, 2009.](https://github.com/dkapitan/jads-discover-projects/blob/main/uci-secom/he2009learning.pdf)
 
 <a name="ref2"></a>[2] [McCann, Michael, et al. "Causality Challenge: Benchmarking relevant signal components for effective monitoring and process control." NIPS Causality: Objectives and Assessment, 2010.](https://github.com/dkapitan/jads-discover-projects/blob/main/uci-secom/mccann2008causality.pdf)  
