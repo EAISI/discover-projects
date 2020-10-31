@@ -35,10 +35,17 @@ The dataset presented in this case represents a selection of such features where
 
   
 ## Using this repository
+
+### Discover projects
+
   - Each dataset and its accompanying material is put in a separate folder.
   - Copies of articles are included for convenience.
   - Non-open-access journals are referenced.
   - Notebooks can be opened directly in Google Colab, to make it easier to get started directly without having to install Anaconda etc.
+
+### CRISP in one day tutorial
+
+An end-to-end machine learning tutorial following the steps of CRISP-DM is also included, the California housing prices dataset. This tutorial is based on based [chapter 2 from Aurélien Géron's book _Hands-On Machine Learning with SCikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb).
   
 ### License
 

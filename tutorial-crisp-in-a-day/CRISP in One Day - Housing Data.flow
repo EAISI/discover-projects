@@ -1,0 +1,161 @@
+{
+  "version": "1.0.0",
+  "cells": [
+    {
+      "type": "cs",
+      "input": "importFiles"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/home/OneDrive - IWD/Clients/PE/2020 07 - Crisp in one day using H2O Flow/Data/housing.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/home/OneDrive - IWD/Clients/PE/2020 07 - Crisp in one day using H2O Flow/Data/housing.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/home/OneDrive - IWD/Clients/PE/2020 07 - Crisp in one day using H2O Flow/Data/housing.csv\"]\n  destination_frame: \"housing.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 10\n  single_quotes: false\n  column_names: [\"longitude\",\"latitude\",\"housing_median_age\",\"total_rooms\",\"total_bedrooms\",\"population\",\"households\",\"median_income\",\"median_house_value\",\"ocean_proximity\"]\n  column_types: [\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 22243"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"housing.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect getColumnSummary \"housing.hex\", \"total_bedrooms\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"summary\", getColumnSummary \"housing.hex\", \"total_bedrooms\""
+    },
+    {
+      "type": "cs",
+      "input": "imputeColumn {\"frame\":\"housing.hex\",\"column\":\"total_bedrooms\",\"method\":\"median\",\"combineMethod\":\"low\"}"
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"summary\", getColumnSummary \"housing.hex\", \"total_bedrooms\""
+    },
+    {
+      "type": "cs",
+      "input": "getColumnSummary \"housing.hex\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect getColumnSummary \"housing.hex\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"domain\", getColumnSummary \"housing.hex\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"characteristics\", getColumnSummary \"housing.hex\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "getColumnSummary \"housing.hex\", \"median_income\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect \"percentiles\", getColumnSummary \"housing.hex\", \"households\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"summary\", getColumnSummary \"housing.hex\", \"households\""
+    },
+    {
+      "type": "cs",
+      "input": "splitFrame"
+    },
+    {
+      "type": "cs",
+      "input": "splitFrame \"housing.hex\", [0.8], [\"train\",\"test\"], 288600"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"train\""
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"test\""
+    },
+    {
+      "type": "cs",
+      "input": "getColumnSummary \"train\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "getColumnSummary \"test\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect getColumnSummary \"train\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect getColumnSummary \"test\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"domain\", getColumnSummary \"train\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"domain\", getColumnSummary \"test\", \"ocean_proximity\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"glm\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'glm', {\"model_id\":\"glm-d49849a9-e7b4-43e5-8f85-e72d80327c5d\",\"training_frame\":\"train\",\"validation_frame\":\"test\",\"nfolds\":0,\"seed\":-1,\"response_column\":\"median_house_value\",\"ignored_columns\":[],\"random_columns\":[],\"ignore_const_cols\":true,\"family\":\"gaussian\",\"rand_family\":[],\"solver\":\"AUTO\",\"alpha\":[],\"lambda\":[],\"lambda_search\":false,\"standardize\":true,\"non_negative\":false,\"startval\":[],\"calc_like\":false,\"HGLM\":false,\"obj_reg\":-1,\"score_each_iteration\":true,\"compute_p_values\":false,\"remove_collinear_columns\":false,\"max_iterations\":-1,\"link\":\"family_default\",\"rand_link\":[],\"max_runtime_secs\":0,\"missing_values_handling\":\"MeanImputation\",\"intercept\":true,\"objective_epsilon\":-1,\"beta_epsilon\":0.0001,\"gradient_epsilon\":-1,\"prior\":-1,\"max_active_predictors\":-1,\"interactions\":[],\"interaction_pairs\":[]}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"glm-d49849a9-e7b4-43e5-8f85-e72d80327c5d\""
+    },
+    {
+      "type": "cs",
+      "input": "buildPartialDependence"
+    },
+    {
+      "type": "cs",
+      "input": "buildPartialDependence {\"destination_key\":\"pdp-f4e23e50-05c8-49ad-83da-6a3e83c56602\",\"model_id\":\"glm-a2fecb16-6561-42c6-b846-9dce9f6a2c4a\",\"frame_id\":\"test\",\"cols\":\"\",\"col_pairs_2dpdp\":\"\",\"nbins\":20,\"row_index\":-1,\"targets\":null}"
+    },
+    {
+      "type": "cs",
+      "input": "getPartialDependence \"pdp-f4e23e50-05c8-49ad-83da-6a3e83c56602\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"drf\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"drf-c83ded54-bf39-4322-aa88-0778db9e7d2c\",\"training_frame\":\"train\",\"validation_frame\":\"test\",\"nfolds\":0,\"response_column\":\"median_income\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":-1,\"mtries\":-1,\"sample_rate\":0.632,\"score_each_iteration\":false,\"score_tree_interval\":0,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"gainslift_bins\":-1,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false,\"check_constant_response\":true}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"drf-c83ded54-bf39-4322-aa88-0778db9e7d2c\""
+    },
+    {
+      "type": "cs",
+      "input": "runAutoML"
+    },
+    {
+      "type": "cs",
+      "input": "runAutoML {\"input_spec\":{\"training_frame\":\"train\",\"response_column\":\"median_house_value\",\"validation_frame\":\"test\",\"ignored_columns\":[],\"sort_metric\":\"AUTO\"},\"build_control\":{\"project_name\":\"Running AutoMachineLearning\",\"nfolds\":5,\"balance_classes\":false,\"stopping_criteria\":{\"seed\":-1,\"max_models\":0,\"max_runtime_secs\":180,\"max_runtime_secs_per_model\":0,\"stopping_rounds\":3,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":-1},\"keep_cross_validation_predictions\":true,\"keep_cross_validation_models\":true,\"keep_cross_validation_fold_assignment\":false},\"build_models\":{\"exclude_algos\":[],\"exploitation_ratio\":0,\"monotone_constraints\":[]}}, 'exec'"
+    },
+    {
+      "type": "cs",
+      "input": "getLeaderboard \"Running AutoMachineLearning@@median_house_value\""
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"StackedEnsemble_AllModels_AutoML_20200715_210425\""
+    }
+  ]
+}
