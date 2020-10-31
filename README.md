@@ -38,4 +38,11 @@ The dataset presented in this case represents a selection of such features where
   - Each dataset and its accompanying material is put in a separate folder.
   - Copies of articles are included for convenience.
   - Non-open-access journals are referenced.
-  - Notebooks can be opened directly in Google Colab, to make it easier to get started directly without having to install Anaconda etc. 
+  - Notebooks can be opened directly in Google Colab, to make it easier to get started directly without having to install Anaconda etc.
+  
+### License
+
+[JADS Discover project](https://www.github.com/dkapitan/jads-discover-projects) by [Daniel Kapitan](https://www.linkedin.com/in/dkapitan) and [Joran Lokkerbol](https://www.linkedin.com/in/joran-lokkerbol-7a68063/) is licensed under under a
+[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+[![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)]([http://creativecommons.org/licenses/by-sa/4.0/) 
