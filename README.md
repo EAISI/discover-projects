@@ -47,9 +47,8 @@ The dataset presented in this case represents a selection of such features where
 
 An end-to-end machine learning tutorial following the steps of CRISP-DM is also included, the California housing prices dataset. This tutorial is based on based [chapter 2 from Aurélien Géron's book _Hands-On Machine Learning with SCikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb).
   
-### License
+### Copyright and license notice
 
-[JADS Discover project](https://www.github.com/dkapitan/jads-discover-projects) by [Daniel Kapitan](https://www.linkedin.com/in/dkapitan) and [Joran Lokkerbol](https://www.linkedin.com/in/joran-lokkerbol-7a68063/) is licensed under under a
-[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg) &copy; 2020 by [Daniel Kapitan](https://www.linkedin.com/in/dkapitan) and [Joran Lokkerbol](https://www.linkedin.com/in/joran-lokkerbol-7a68063/). _[JADS Discover projects](https://www.github.com/dkapitan/jads-discover-projects)_.
 
-[![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)]([http://creativecommons.org/licenses/by-sa/4.0/) 
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
