@@ -49,6 +49,4 @@ An end-to-end machine learning tutorial following the steps of CRISP-DM is also 
   
 ### Copyright and license notice
 
-![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg) &copy; 2020 by [Daniel Kapitan](https://www.linkedin.com/in/dkapitan) and [Joran Lokkerbol](https://www.linkedin.com/in/joran-lokkerbol-7a68063/). _[JADS Discover projects](https://www.github.com/dkapitan/jads-discover-projects)_.
-
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg) &copy; 2020 by [Daniel Kapitan](https://www.linkedin.com/in/dkapitan) and [Joran Lokkerbol](https://www.linkedin.com/in/joran-lokkerbol-7a68063/). _[JADS Discover projects](https://www.github.com/dkapitan/jads-discover-projects)_.<br>This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
