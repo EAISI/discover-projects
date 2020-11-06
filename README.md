@@ -1,3 +1,5 @@
+![](https://www.jads.nl/uploads/2/1/3/2/21320840/published/head_28.jpg?1547821308)
+
 # JADS Discover Machine Learning projects
 
 ## A selection of 'discovery projects' for getting hands-on experience in machine learning
