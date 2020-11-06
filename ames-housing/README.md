@@ -1,5 +1,7 @@
 ![](https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png)
 
+# Ames Housing dataset
+
 Following Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview), the goal for this discover project is to predict the sales price for each house. For each Id in the test set, you must predict the value of the SalePrice variable. 
 
 The performance metric for your prediction model is the _Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price_. (Taking logs means that errors in predicting expensive houses and cheap houses will affect the result equally.)
