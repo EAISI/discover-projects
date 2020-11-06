@@ -1,11 +1,8 @@
-Context
-This database contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In particular, the Cleveland database is the only one that has been used by ML researchers to
-this date. The "goal" field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4.
+![](https://images.unsplash.com/photo-1460672985063-6764ac8b9c74?ixlib=rb-1.2.1&auto=format&fit=crop&w=3310&q=80)
 
 ## Context
 
-This database contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In particular, the Cleveland database is the only one that has been used by ML researchers to
-this date. The "goal" field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4.
+This database contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In particular, the Cleveland database is the only one that has been used by ML researchers to this date. The "goal" field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4.
 
 ## Content
 Attribute Information:
@@ -29,12 +26,27 @@ Attribute Information:
 The names and social security numbers of the patients were recently removed from the database, replaced with dummy values. One file has been "processed", that one containing the Cleveland database. All four unprocessed files also exist in this directory.
 
 
+## Exercises
 
-## Inspiration
-Experiments with the Cleveland database have concentrated on simply attempting to distinguish presence (values 1,2,3,4) from absence (value 0).
+### Exercise 1
+Provide a table with descriptive statistics for all included variables and check:
 
-See if you can find any other trends in heart data to predict certain cardiovascular events or find any clear indications of heart health.
+  - Classes of each of the variables (e.g. factors or continuous variables)
+  - Change the class of the "target" variable such that it is a binary factor
+  - Descriptive/summary statistics for all continuous variables (e.g. mean, SD, range) and factor variables (e.g. frequencies)
+  - Explore missing values
+  
+### Exercise 2
+The variable "target" refers to the presence of heart disease and hence is the variable of interest for our prediction model ("Y" or dependent variable). The frequency of the outcomes (heart disease yes/no) was already determined in the previous code blocks. Please further explore Y in terms of:
 
+  - Describe X-variables separately for both outcome categories
+  - Draw a correlation plot to see all correlations between Y and the independent (numeric) variables
+  - Visualize the relation between Y and a few correlated X-variables (i.e. create boxplot or scatterplot)
+
+### Exercise 3
+
+  - Estimate a linear model, LASSO model, a kNN model and a Random Forests model
+  - Assess which model performs best
 
 ## Acknowledgements
 Creators:
@@ -45,3 +57,5 @@ Creators:
   - V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.
 
 Donor: David W. Aha (aha@ics.uci.edu)
+
+Photo by [Jesse Orrico](https://unsplash.com/@jessedo81?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/collections/9716108/doctors?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
