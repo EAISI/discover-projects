@@ -1,4 +1,4 @@
-![](https://images.unsplash.com/photo-1460672985063-6764ac8b9c74?ixlib=rb-1.2.1&auto=format&fit=crop&w=3310&q=80)
+![](https://github.com/jads-nl/discover-projects/blob/main/uci-heart-disease/jesse-orrico-Us3AQvyOP-o-unsplash.jpg)
 
 ## Context
 
