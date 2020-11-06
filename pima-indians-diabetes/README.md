@@ -1,3 +1,4 @@
+![](https://github.com/jads-nl/discover-projects/blob/main/pima-indians-diabetes/women-Pima-shinny-game-field-hockey.jpg)
 # Pima Indians Diabetes dataset
 
 Predict the onset of diabetes based on diagnostic measures.
