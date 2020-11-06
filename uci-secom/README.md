@@ -1,4 +1,4 @@
-![](https://storage.googleapis.com/kaggle-datasets-images/28901/36825/42e5672c33485a8dd56cbe448caaee7b/dataset-cover.jpg?t=2018-05-28-15-58-24)
+![](https://github.com/jads-nl/discover-projects/blob/main/uci-secom/dataset-cover.jpg)
 
 # UCI SECOM dataset
 
