@@ -1,3 +1,5 @@
+![](https://storage.googleapis.com/kaggle-datasets-images/28901/36825/42e5672c33485a8dd56cbe448caaee7b/dataset-cover.jpg?t=2018-05-28-15-58-24)
+
 # UCI SECOM dataset
 
 Approaches for the class imbalance problem, feature selection and causality in semicondutor manufacturing process line data.
@@ -17,7 +19,7 @@ The dataset has the following characteristics:
 6.	some columns have constant values 
 
 
-## Tasms
+## Exercises
 The SECOM dataset presents us with two problems, namely
 
 1. Working with skewed data, i.e. an imbalanced classification problem (see <a href="#ref1">[1]</a>)
@@ -25,12 +27,13 @@ The SECOM dataset presents us with two problems, namely
 
 In this project, you will explore both tasks.
 
-### Imbalanced classification
+### Exercise 1: Imbalanced classification
+
   - Try to successfully predict fails using i) cost sensitive learning approach and ii) sampling-based approach
   - Evaluate performance using the precision-recall curve
   - Discuss the pros and cons of different operating points on the PR curve 
 
-### Feature reduction
+### Exercise 2: Feature reduction
 A secondary objective will be feature reduction. A streamlined feature set can not only lead to better prediction accuracy and data understanding but also save manufacturing resources. Explore causal understanding of the manufacturing process using the 590 features.
 
 
