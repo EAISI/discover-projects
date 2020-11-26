@@ -30,11 +30,11 @@ There a several missing values in the dataset, which need to be tackled before w
 The variable "SalePrice" refers to the price at which a property was sold and hence is the variable of interest for our prediction model ("Y" or dependent variable). Explore Y in terms of:
 
   - Descriptive/summary statistics (e.g. mean, SDs, range)
-  - Visualize the distribution of Y (e.g. use base-R "hist" or "ggplot" from the "ggplot2"-package)
-  - Visualize the distribution of Y by looking at various subgroups (e.g. create boxplot or scatterplot using the "ggplot2"-package)
+  - Visualize the distribution of Y (e.g. matplotlib or seaborn)
+  - Visualize the distribution of Y by looking at various subgroups (e.g. create boxplot or scatterplot using matplotlib or seaborn)
   - Look at differences between neigbourhoods
   - Look at differences between housing style
-  - Draw a correlation plot to see all correlations between Y and the independent (numeric) variables (see HINT 2 below)
+  - Draw a correlation plot to see all correlations between Y and the independent (numeric) variables (Hint: use [`df.plotting.scatter_matrix`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.scatter_matrix.html) or [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
   
   
 ### Exercise 4
