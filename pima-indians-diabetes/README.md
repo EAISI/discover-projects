@@ -1,3 +1,4 @@
+![](https://github.com/jads-nl/discover-projects/blob/main/pima-indians-diabetes/women-Pima-shinny-game-field-hockey.jpg)
 # Pima Indians Diabetes dataset
 
 Predict the onset of diabetes based on diagnostic measures.
@@ -17,8 +18,24 @@ Several constraints were placed on the selection of these instances from a large
 - Age: Age (years)
 - Outcome: Class variable (0 or 1)
 
-## Tasks
-  - Construct at least 2 different types of prediction models
+## Exercises
+
+### Exercise 1
+ - Provide a table with descriptive statistics for all included variables and check:
+   - Classes of each of the variables (e.g. factors or continuous variables).
+   - Change the class of the "Outcome" variable such that it is a binary factor
+   - Descriptive/summary statistics for all continuous variables (e.g. mean, SD, range) and factor variables (e.g. frequencies).
+ - Explore missing values
+ 
+### Exercise 2
+The variable "Outcome" refers to the presence of diabetes and hence is the variable of interest for our prediction model ("Y" or dependent variable). The frequency of the outcomes (diabetes yes/no) was already determined in the previous code block Please further explore Y in terms of:
+
+  - Describe X-variables separately for both outcome categories 
+  - Draw a correlation plot to see all correlations between Y and the independent (numeric) variables 
+  - Visualize the relation between Y and a few correlated X-variables 
+
+### Exercise 3
+  - Estimate a linear model, LASSO model and a kNN model on the train set. Inspect the outcomes of the model. Which model performs best?
   - Interpret the different models and argue which one is more easily explainable. Use any of the following libraries for interpreting models: [SHAP](https://shap.readthedocs.io/en/latest/), [lime](https://github.com/marcotcr/lime), [sklearn partial dependence plot](https://scikit-learn.org/stable/modules/partial_dependence.html), [ELI5](https://eli5.readthedocs.io/en/latest/)
   
 
