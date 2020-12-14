@@ -23,3 +23,16 @@ There are nine categories for all products. Each target category represents one 
 - id - an anonymous id unique to a product
 - feat_1, feat_2, ..., feat_93 - the various features of a product
 - target - the class of a product
+
+### Getting the data
+The data is provided here in [parquet](https://parquet.apache.org/) format. You can read these directly into a `pandas.DataFrame` provided `pyarrow` is installed.
+
+```shell
+pip install --user pyarrow
+```
+
+After that, you can do
+
+```python
+df = pd.read_parquet('https://github.com/jads-nl/discover-projects/blob/main/otto-group-product-classification/train.parquet?raw=true')
+```
