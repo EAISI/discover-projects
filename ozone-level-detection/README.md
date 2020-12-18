@@ -5,3 +5,7 @@ Much work on skewed, stochastic, high dimensional, and biased datasets usually i
 
 ## Challenge
 Train a classifier that can predict 8-hour ozone days with a performance of at least 50% precision with 50% recall.
+
+## References
+- [OpenML](https://www.openml.org/d/1487)
+- [UCI](https://archive.ics.uci.edu/ml/datasets/ozone+level+detection)
