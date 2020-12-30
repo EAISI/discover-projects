@@ -1,4 +1,4 @@
-![](https://unsplash.com/photos/8lnbXtxFGZw)
+![](https://github.com/jads-nl/discover-projects/blob/main/bank-churn-modelling/banner-dollar-bills.jpg?raw=true)
 
 # Churn modelling for a bank
 
