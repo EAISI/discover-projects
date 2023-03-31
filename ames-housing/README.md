@@ -15,8 +15,8 @@ As an extra challenge, you can try to trade-off the number of predictors (less i
 ### Exercise 1
 Provide a table with descriptive statistics for all included variables and check:
   
-  - Classes of each of the variables (e.g. factors or continuous variables).
-  - Descriptive/summary statistics for all continuous variables (e.g. mean, SD, range) and factor variables (e.g. frequencies).
+  - Classes of each of the variables (e.g. factors or continuous variables)
+  - Descriptive/summary statistics for all continuous variables (e.g. mean, SD, range) and factor variables (e.g. frequencies)
   - Explore missing values
   
   

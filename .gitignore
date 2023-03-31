@@ -146,3 +146,4 @@ dmypy.json
 *.bak
 *.fst
 *.rds
+.Rproj.user
