@@ -127,3 +127,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+###############
+# OS junk files
+###############
+[Tt]humbs.db
+*.DS_Store
+
+###############
+# Files R
+###############
+*.Rproj
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
+*.log
+*.bak
+*.fst
+*.rds
