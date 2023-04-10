@@ -12,6 +12,11 @@ As an extra challenge, you can try to trade-off the number of predictors (less i
 
 ## Exercises
 
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
 ### Exercise 1
 Provide a table with descriptive statistics for all included variables and check:
   
