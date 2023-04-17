@@ -135,7 +135,7 @@ dmypy.json
 *.DS_Store
 
 ###############
-# Files R
+# Files R / RStudio
 ###############
 *.Rproj
 *.Rproj.user
@@ -147,3 +147,8 @@ dmypy.json
 *.fst
 *.rds
 .Rproj.user
+
+###############
+# VS Code workspace
+###############
+*.code-workspace
