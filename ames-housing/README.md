@@ -5,7 +5,7 @@
 This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The information you need to work on this case is stored on [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing)
 
 
-### Business Understanding
+## Business Understanding
 
 **Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sales price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the experienced agents are not always readily available. So, the management team of Homely Homes has decided to go full on data, and is requesting a data science expert to develop a model that can predict the sales price by the push of a button. 
 
@@ -22,66 +22,79 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 - As an extra challenge, you can try to trade-off the number of predictors (less is better) vs. performance. Can you make the top 10% (RMSLE 0.123) with the least number of predictors?
 
 
-### Data Understanding
+## Data Understanding
 
-#### Exercise 1
+### Exercise 1 - Load the 'Ames Housing' dataset
 
-Provide a table with descriptive statistics for all included variables and check:
+Load 'AmesHousing.csv' in your Python environment, [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing).
 
-a. The variable that can be used as the 'Y' variable, a.k.a the dependent or outcome variable. Which is it?
+### Exercise 2 - Descriptive statistics
 
-b. Classes of each variable. Which variables are categoric and which are continuous?
+a. Which variables are numerical? And which are strings? How many variables are there of both types?
 
-c. Descriptive/summary statistics for continuous variables (e.g., mean, SD, range) and categorical variables (e.g., frequencies)
-  
-d. Missing values
+b. Get first feel for missing values (variable completeness) and type. Is `SalePrice` complete? (hint: use `info()`)
 
+c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, SD, range) and object variables (e.g., number of unique values, mode, and its frequency)
 
-### Exercise 2
-
-Explore the Y variable in terms of:
-
-a. Descriptive/summary statistics, e.g., mean, SDs, range
-
-b. Visualize the distribution of Y
-
-c. Visualize the distribution of Y by looking at various subgroups, e.g., create scatter plots for continuous variables and box plots for categorical variables
-
-d. Look at differences between neigbourhoods
-
-e. Look at differences between housing style
-
-f. Draw a correlation plot to see all correlations between Y and the independent (continuous) variables (Hint: use [`df.plotting.scatter_matrix`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.plotting.scatter_matrix.html) or [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
-
-g. Draw a correlation plot to see all correlations between dependent variables that relate to surface area, indicated by 'SF' in variable name.
-
-### Data Preparation
+d. Create a frequency table counting the number of missing values per variable
 
 
+## Data Preparation
 
-Remove outliers
+### Exercise 3 - Impute missing data
 
-One hot enconding
-
-g. Draw a correlation plot to see correlations between Y and the neighborhoods.
-
-### Exercise 4
 There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-  - Use the median for continuous variables
-  - Use the label "100" in all factor variables
+a. Impute number variables with median value in concerned number variable
+
+b1. Impute object variables with label "jads"
+
+b2. Alternatively, impute object variables with the most frequently present label in concerned object variable
+
+c. Concatenate the numerical and object data into a single data frame
 
 
-### Modeling
+## Data Understanding (continued)
 
-### Evaluation
+### Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
+
+a. Conduct descriptive/summary statistics on the Y variable (mean, median, SD, range)
+
+b. Visualize the distribution of the Y variable
+
+c. Investigate how neighborhood (categorical) and grand living area (continuous) relate to the Y variable; use, e.g., bar charts, scatter plots, boxplots (hint: use [`pandas.DataFrame.hist`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html), [`matplotlib.pyplot.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html),[`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html))
+
+d. Draw scatterplots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
+
+e. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
+
+
+
+## Modeling
+
+### Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
+
+a. Estimate a Linear Regression model
+
+b. Estimate a LASSO model
+
+c. Estimate a kNN model
+
+
+## Evaluation
 
 The performance metric for the prediction model should be the Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. This makes it the Root-Mean-Squared-Log-Error (RMSLE). By plotting a histogram of the sale price you will understand why the logarithm is recommended.
 
+### Exercise 6 - Assess which model performs best
+
+
+
+Remove outliers -- Check in Exercise 4 where 
+
+One hot enconding -- Check in Exercise 4 where
+
 
 #============================================================================================================
-
-
   
 ### Exercise 1
 Provide a table with descriptive statistics for all included variables and check:
