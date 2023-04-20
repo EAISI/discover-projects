@@ -2,7 +2,7 @@
 
 # Ames Housing dataset
 
-This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The information you need to work on this case is stored on [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing)
+This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The information you need to work on this case is stored on [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing). The exercises are structured based on the CRISP-DM methodology. As you'll work through the exercises, you will experience first hand that CRISP-DM is a non-linear process ;-)
 
 
 ## Business Understanding
@@ -64,10 +64,15 @@ b. Visualize the distribution of the Y variable
 
 c. Investigate how neighborhood (categorical) and grand living area (continuous) relate to the Y variable; use, e.g., bar charts, scatter plots, boxplots (hint: use [`pandas.DataFrame.hist`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html), [`matplotlib.pyplot.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html),[`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html))
 
-d. Draw scatterplots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
+## Data Preparation (continued)
 
-e. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
+d. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the applicability of the prediction model?
 
+## Data Understanding (continued)
+
+e. Draw scatter plots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
+
+f. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
 
 
 ## Modeling
