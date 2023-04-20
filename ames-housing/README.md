@@ -129,3 +129,4 @@ The variable "SalePrice" refers to the price at which a property was sold and he
 
   - Estimate a LASSO model and a kNN model
   - Assess which model performs best
+  
