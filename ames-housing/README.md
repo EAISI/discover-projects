@@ -28,7 +28,7 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 Load 'AmesHousing.csv' in your Python environment, [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing).
 
-### Exercise 2 - Descriptive statistics
+## Exercise 2 - Descriptive statistics
 ### Data Understanding (continued)
 
 a. Which variables are numerical? And which are strings? How many variables are there of both types?
