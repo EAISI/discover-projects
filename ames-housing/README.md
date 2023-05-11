@@ -4,10 +4,11 @@
 
 This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The information you need to work on this case is stored on [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing). The exercises are structured based on the CRISP-DM methodology. As you'll work through the exercises, you will experience first hand that CRISP-DM is a non-linear process ;-)
 
+## Let's get started
 
-## Business Understanding
+### Business Understanding
 
-**Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sales price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the experienced agents are not always readily available. So, the management team of Homely Homes has decided to go full on data, and is requesting a data science expert to develop a model that can predict the sales price by the push of a button. 
+**Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sales price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the experienced agents are not always readily available. So, the management team of Homely Homes has decided to go full on data, and is requesting you to develop a model that can predict the sales price by the push of a button. 
 
 **Business objective**: To become independent on real estate agents to estimate sales prices.
 
@@ -22,13 +23,13 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 - As an extra challenge, you can try to trade-off the number of predictors (less is better) vs. performance. Can you make the top 10% (RMSLE 0.123) with the least number of predictors?
 
 
-## Data Understanding
-
-### Exercise 1 - Load the 'Ames Housing' dataset
+## Exercise 1 - Load the 'Ames Housing' dataset
+### Data Understanding
 
 Load 'AmesHousing.csv' in your Python environment, [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing).
 
 ### Exercise 2 - Descriptive statistics
+### Data Understanding (continued)
 
 a. Which variables are numerical? And which are strings? How many variables are there of both types?
 
@@ -38,25 +39,21 @@ c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, S
 
 d. Create a frequency table counting the number of missing values per variable
 
-
-## Data Preparation
-
-### Exercise 3 - Impute missing data
+## Exercise 3 - Impute missing data
+### Data Preparation
 
 There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
 a. Impute number variables with median value in concerned number variable
 
-b1. Impute object variables with label "jads"
+b1. Impute object variables with label "other"
 
 b2. Alternatively, impute object variables with the most frequently present label in concerned object variable
 
 c. Concatenate the numerical and object data into a single data frame
 
-
-## Data Understanding (continued)
-
-### Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
+## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
+### Data Understanding (continued)
 
 a. Conduct descriptive/summary statistics on the Y variable (mean, median, SD, range)
 
@@ -64,20 +61,18 @@ b. Visualize the distribution of the Y variable
 
 c. Investigate how neighborhood (categorical) and grand living area (continuous) relate to the Y variable; use, e.g., bar charts, scatter plots, boxplots (hint: use [`pandas.DataFrame.hist`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html), [`matplotlib.pyplot.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html),[`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html))
 
-## Data Preparation (continued)
+### Data Preparation (continued)
 
 d. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the applicability of the prediction model?
 
-## Data Understanding (continued)
+### Data Understanding (continued)
 
 e. Draw scatter plots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
 
 f. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
 
-
-## Modeling
-
-### Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
+## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
+### Modeling
 
 a. Estimate a Linear Regression model
 
@@ -85,9 +80,8 @@ b. Estimate a LASSO model
 
 c. Estimate a kNN model
 
-
-## Evaluation
+## Exercise 6 - Assess which model performs best
+### Evaluation
 
 The performance metric for the prediction model should be the Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. This makes it the Root-Mean-Squared-Log-Error (RMSLE). By plotting a histogram of the sale price you will understand why the logarithm is recommended.
 
-### Exercise 6 - Assess which model performs best
