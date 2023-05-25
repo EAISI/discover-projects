@@ -8,7 +8,7 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 ### Business Understanding
 
-**Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sales price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the experienced agents are not always readily available. So, the management team of Homely Homes has decided to go full on data, and is requesting you to develop a model that can predict the sales price by the push of a button. 
+**Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sales price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the more experienced agents are not always readily available. So, the management team of Homely Homes has decided to go full on data, and is requesting you to develop a model that can predict the sales price by the push of a button. 
 
 **Business objective**: To become independent on real estate agents to estimate sales prices.
 
@@ -16,7 +16,7 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 **Project goal**: Develop a model that predicts sales price of a house given a set of it's features,
 
-- The performance metric for your prediction model is the `Root Mean Squared Logarithmic Error` (RMSLE), i.e., the root mean squared error between the logarithm of the predicted value and the logarithm of the observed sales price. Taking the logarithm means that errors in predicting expensive houses and cheap houses will affect the result equally.
+- The performance metric for your prediction model is the `Root Mean Squared Logarithmic Error` (RMSLE), i.e., the root mean squared error between the logarithm of the predicted value and the logarithm of the observed sales price. Taking the logarithm means that errors in predicting overly expensive houses and cheaper houses will affect the result equally.
 
 - Looking at the [public leaderboard](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/leaderboard), the top 2% have an RMSLE of 0.00044, whilst 25th-percentile and the median performance is at 0.125 and 0.14, respectively.
 
@@ -57,19 +57,21 @@ c. Concatenate the numerical and object data into a single data frame
 
 a. Conduct descriptive/summary statistics on the Y variable (mean, median, SD, range)
 
-b. Visualize the distribution of the Y variable
+b. Investigate how neighborhood (categorical) and grand living area (continuous) relate to the Y variable; use, e.g., bar charts, scatter plots, boxplots (hint: use [`pandas.DataFrame.hist`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html), [`matplotlib.pyplot.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html),[`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html), [altair.histogram](https://altair-viz.github.io/gallery/simple_histogram.html), [altair.scatter](https://altair-viz.github.io/gallery/scatter_tooltips.html), [altair.boxplot](https://altair-viz.github.io/gallery/boxplot.html))
 
-c. Investigate how neighborhood (categorical) and grand living area (continuous) relate to the Y variable; use, e.g., bar charts, scatter plots, boxplots (hint: use [`pandas.DataFrame.hist`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html), [`matplotlib.pyplot.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html),[`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html))
+c. Visualize the distribution of the Y variable. What do you observe?
 
 ### Data Preparation (continued)
 
-d. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the applicability of the prediction model?
+d. Assess the distribution of `SalesPrice` in the previous exercise. What do you observe? Log-transform the outcome variable. What does it mean for the performance of the prediction model?
+
+e. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the applicability of the prediction model?
 
 ### Data Understanding (continued)
 
-e. Draw scatter plots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
+f. Draw scatter plots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
 
-f. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
+g. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
