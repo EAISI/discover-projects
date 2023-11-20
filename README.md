@@ -1,6 +1,6 @@
 ![](https://www.jads.nl/uploads/2/1/3/2/21320840/published/head_28.jpg?1547821308)
 
-# JADS Discover Machine Learning projects
+# Discover Machine Learning projects
 
 ## A selection of 'discovery projects' for getting hands-on experience in machine learning
 This repository was developed as part of the Discover track at the [Jheronimus Academy of Data Science (JADS)](https://www.jads.nl/professionaleducation.html). The aim of these 'discovery projects' is to facilitate the participants in getting hands-on experience in building a model following the CRISP-DM framework. Learning-by-doing is arguably the best way to get through the [valley of despair](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Dunning%E2%80%93Kruger_Effect_01.svg/1231px-Dunning%E2%80%93Kruger_Effect_01.svg.png) as quickly as possible.
