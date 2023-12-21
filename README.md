@@ -3,12 +3,12 @@
 # Discover Machine Learning projects
 
 ## A selection of 'discovery projects' for getting hands-on experience in machine learning
-This repository was developed as part of the Discover track at the [Jheronimus Academy of Data Science (JADS)](https://www.jads.nl/professionaleducation.html). The aim of these 'discovery projects' is to facilitate the participants in getting hands-on experience in building a model following the CRISP-DM framework. Learning-by-doing is arguably the best way to get through the [valley of despair](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Dunning%E2%80%93Kruger_Effect_01.svg/1231px-Dunning%E2%80%93Kruger_Effect_01.svg.png) as quickly as possible.
+This repository was developed as part of the Mastering Data & AI programme at [EAISI Academy](https://www.tue.nl/en/research/institutes/eindhoven-artificial-intelligence-systems-institute/ai-education/professional-education/eaisi-academy). The aim of these 'discovery projects' is to facilitate the participants in getting hands-on experience in building a model following the CRISP-DM framework. Learning-by-doing is arguably the best way to get through the [valley of despair](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Dunning%E2%80%93Kruger_Effect_01.svg/1231px-Dunning%E2%80%93Kruger_Effect_01.svg.png) as quickly as possible.
 
 ![CRISP-DM framework](https://exde.files.wordpress.com/2009/03/crisp_visualguide.png?w=768)
 
 ## A curated selection of public datasets, notebooks, articles and other stuff from the commons
-[Made with creative commons in mind](https://creativecommons.org/use-remix/made-with-cc/), we have used and remixed what we think are the most useful datasets, notebooks, articles available in the public domain. Each folder contains a set of materials for a given dataset, with specific assignments and questions. Examples of solutions and best practices are included in R and Python notebooks. In due course we aim to add [H2O Flow](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/flow.html) for those preferring to work with a graphical UI.
+[Made with creative commons in mind](https://creativecommons.org/use-remix/made-with-cc/), we have used and remixed what we think are the most useful datasets, notebooks, articles available in the public domain. Each folder contains a set of materials for a given dataset, with specific assignments and questions. Examples of solutions and best practices are included in R and Python notebooks. In due course we aim to add [KNIME]([https://docs.h2o.ai/h2o/latest-stable/h2o-docs/flow.html](https://www.knime.com/)) for those preferring to work with a graphical UI.
 
 ### [Ames Housing dataset by Dean de Kock (2011)](http://jse.amstat.org/v19n3/decock.pdf)
 An alternative, more detailed and rich dataset than the Boston housing dataset (which dates from 1978). Available on Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview) with a lot of useful tutorials. Alternatively, use the [AmesHousing R package](https://cran.r-project.org/web/packages/AmesHousing/AmesHousing.pdf).
@@ -45,7 +45,6 @@ The dataset presented in this case represents a selection of such features where
   - Each dataset and its accompanying material is put in a separate folder.
   - Copies of articles are included for convenience.
   - Non-open-access journals are referenced.
-  - Notebooks can be opened directly in Google Colab, to make it easier to get started directly without having to install Anaconda etc.
 
 ### End-to-end machine learning tutorial
 
