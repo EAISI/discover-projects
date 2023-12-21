@@ -30,6 +30,14 @@ as shown below (thanks Kristen Gorman for clarifying!):
 
 <img src="culmen_depth.png" width="75%" style="display: block; margin: auto;" />
 
+## Articles and examples
+
+- The original website of the R package ([link](https://allisonhorst.github.io/palmerpenguins/index.html))
+- Regression and classification using scikit-learn ([link](https://inria.github.io/scikit-learn-mooc/python_scripts/trees_dataset.html))
+- Classification and exploratory data analysis ([Kaggle](https://www.kaggle.com/code/alabuda/classification-and-eda-palmer-penguins))
+- Use a neural network for multi-class classification ([blog](https://www.neuraldesigner.com/learning/examples/palmer-penguins/))
+
+
 ## License
 
 Data are available by
