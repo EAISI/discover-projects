@@ -1,7 +1,7 @@
 # palmerpenguins <a href='https://allisonhorst.github.io/palmerpenguins/'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
 The goal of palmerpenguins is to provide a great dataset for data
-exploration & visualization, as an alternative to `iris`. You can download the data in csv [here](https://github.com/EAISI/discover-projects/blob/main/palmer-penguins/penguins_lter.csv?raw=True).
+exploration & visualization, as an alternative to `iris`. You can download the data in csv [here](https://github.com/EAISI/discover-projects/blob/main/palmer-penguins/penguins_lter.csv).
 
 <img src="README-flipper-bill-1.png" width="75%" style="display: block; margin: auto;" />
 
