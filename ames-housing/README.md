@@ -2,7 +2,7 @@
 
 # Ames Housing dataset
 
-This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The information you need to work on this case is stored on [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing). The exercises are structured based on the CRISP-DM methodology. As you'll work through the exercises, you will experience first hand that CRISP-DM is a non-linear process ;-)
+This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The exercises are structured based on the CRISP-DM framework. As you'll work through the exercises, you will experience first hand that CRISP-DM is a non-linear process.
 
 ## Let's get started
 
@@ -26,7 +26,7 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 ## Exercise 1 - Load the 'Ames Housing' dataset
 ### Data Understanding
 
-Load 'AmesHousing.csv' in your Python environment, [GitHub 'jads-nl'](https://github.com/jads-nl/discover-projects/tree/main/ames-housing).
+Load 'AmesHousing.csv' in your Python environment.
 
 ## Exercise 2 - Descriptive statistics
 ### Data Understanding (continued)
