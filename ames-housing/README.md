@@ -31,33 +31,34 @@ Load 'AmesHousing.csv' in your Python environment.
 ## Exercise 2 - Descriptive statistics
 ### Data Understanding (continued)
 
-a. Which variables are numerical? And which are strings? How many variables are there of both types?
+a. Which variables are numerical? And which are categorical? How many variables do we have of both types?
 
-b. Get first feel for missing values (variable completeness) and type. Is `SalePrice` complete? (hint: use `info()`)
+b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete? (hint: use `info()`)
 
-c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, SD, range) and object variables (e.g., number of unique values, mode, and its frequency)
+c. Create a frequency table counting the number of missing values per variable
 
-d. Create a frequency table counting the number of missing values per variable
+d. Conduct descriptive/summary statistics for numerical variables (e.g., mean, median, std, range) and for categorical variables (e.g., number of unique values, mode, and their frequency)
+
 
 ## Exercise 3 - Impute missing data
 ### Data Preparation
 
 There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-a. Impute number variables with median value in concerned number variable
+a. Impute the number variables with the median value of the available data
 
-b1. Impute object variables with label "other"
+b1. Impute the categorical variables with the label "other"
 
-b2. Alternatively, impute object variables with the most frequently present label in concerned object variable
+b2. Alternatively, impute the categorical variables with the mode (most frequent value) of the available data
 
-c. Concatenate the numerical and object data into a single data frame
+c. Concatenate the numerical and the categorical data into a single data frame
 
 ## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
 ### Data Understanding (continued)
 
-a. Conduct descriptive/summary statistics on the Y variable (mean, median, SD, range)
+a. Conduct descriptive/summary statistics on the Y variable (mean, median, std, range)
 
-b. Investigate how neighborhood (categorical) and grand living area (continuous) relate to the Y variable; use, e.g., bar charts, scatter plots, boxplots (hint: use [`pandas.DataFrame.hist`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html), [`matplotlib.pyplot.scatter`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html),[`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html), [altair.histogram](https://altair-viz.github.io/gallery/simple_histogram.html), [altair.scatter](https://altair-viz.github.io/gallery/scatter_tooltips.html), [altair.boxplot](https://altair-viz.github.io/gallery/boxplot.html))
+b. Investigate how neighborhood (categorical) and grand living area (numerical) relate to the Y variable. Use, e.g., bar charts, scatter plots, and boxplots (hint: [`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html), [altair.histogram](https://altair-viz.github.io/gallery/simple_histogram.html), [altair.scatter](https://altair-viz.github.io/gallery/scatter_tooltips.html), [altair.boxplot](https://altair-viz.github.io/gallery/boxplot.html))
 
 c. Visualize the distribution of the Y variable. What do you observe?
 
@@ -65,13 +66,13 @@ c. Visualize the distribution of the Y variable. What do you observe?
 
 d. Assess the distribution of `SalePrice` in the previous exercise. What do you observe? Log-transform the outcome variable. What does it mean for the performance of the prediction model?
 
-e. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the applicability of the prediction model?
+e. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
 
 ### Data Understanding (continued)
 
-f. Draw scatter plots between Y and all numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
+f. Draw scatter plots between Y and each of the numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
 
-g. Draw correlation plots to see all correlations between Y and the independent (continuous) variables (Hint: calculate Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
+g. Draw correlation plots to investigate the correlations between Y and each of the numerical variables (Hint: calculate the Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling

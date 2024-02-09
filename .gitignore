@@ -76,6 +76,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+**/.ipynb_checkpoints/
 
 # IPython
 profile_default/
@@ -133,6 +134,7 @@ dmypy.json
 ###############
 [Tt]humbs.db
 *.DS_Store
+**/.DS_Store
 
 ###############
 # Files R / RStudio
