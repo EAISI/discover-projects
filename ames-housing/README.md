@@ -45,7 +45,7 @@ d. Conduct descriptive/summary statistics for numerical variables (e.g., mean, m
 
 There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-a. Impute the number variables with the median value of the available data
+a. Impute the numerical variables with the median value of the available data
 
 b1. Impute the categorical variables with the label "other"
 
