@@ -58,21 +58,23 @@ c. Concatenate the numerical and the categorical data into a single data frame
 
 a. Conduct descriptive/summary statistics on the Y variable (mean, median, std, range)
 
-b. Investigate how neighborhood (categorical) and grand living area (numerical) relate to the Y variable. Use, e.g., bar charts, scatter plots, and boxplots (hint: [`seaborn.histplot`](https://seaborn.pydata.org/generated/seaborn.histplot.html), [`seaborn.scatterplot`](https://seaborn.pydata.org/generated/seaborn.scatterplot.html), [`seaborn.boxplot`](https://seaborn.pydata.org/generated/seaborn.boxplot.html), [altair.histogram](https://altair-viz.github.io/gallery/simple_histogram.html), [altair.scatter](https://altair-viz.github.io/gallery/scatter_tooltips.html), [altair.boxplot](https://altair-viz.github.io/gallery/boxplot.html))
+b. Investigate how `Gr Liv Area` (numerical) relate to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-c. Visualize the distribution of the Y variable. What do you observe?
+c. Investigate how `Neighborhood` (categorical) relate to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [histogram](https://altair-viz.github.io/gallery/boxplot.html).
+
+d. Visualize the distribution of the Y variable. What do you observe?
 
 ### Data Preparation (continued)
 
-d. Assess the distribution of `SalePrice` in the previous exercise. What do you observe? Log-transform the outcome variable. What does it mean for the performance of the prediction model?
+e. Assess the distribution of `SalePrice` in the previous exercise. What do you observe? Log-transform the outcome variable. What does it mean for the performance of the prediction model?
 
-e. Assess grand living area ('Gr Liv Area') for all houses in previous exercise. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
+f. Assess `Gr Liv Area` for all houses in the previous exercise. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
 
 ### Data Understanding (continued)
 
-f. Draw scatter plots between Y and each of the numerical features (hint: use [`seaborn.pairplot`](https://seaborn.pydata.org/generated/seaborn.pairplot.html))
+g. Draw scatter plots between Y and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
 
-g. Draw correlation plots to investigate the correlations between Y and each of the numerical variables (Hint: calculate the Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
+h. Draw correlation plots to investigate the correlations between Y and each of the numerical variables (Hint: calculate the Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
