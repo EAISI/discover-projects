@@ -58,11 +58,13 @@ c. Concatenate the numerical and the categorical data into a single data frame
 
 a. Conduct descriptive/summary statistics on the Y variable (mean, median, std, range)
 
-b. Investigate how `Gr Liv Area` (numerical) relate to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
+b. Visualize the distribution of the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html)
 
-c. Investigate how `Neighborhood` (categorical) relate to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [histogram](https://altair-viz.github.io/gallery/boxplot.html).
+b. Investigate how `Gr Liv Area` (numerical) relates to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-d. Visualize the distribution of the Y variable. What do you observe?
+c. Investigate how `Neighborhood` (categorical) relates to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
+
+d.  What do you observe?
 
 ### Data Preparation (continued)
 
