@@ -84,11 +84,11 @@ i. Create correlation plots showing the correlations between each pair of numeri
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
 
-a. Estimate a Linear Regression model
+a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
 
-b. Estimate a LASSO model
+b. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) and [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)
 
-c. Estimate a kNN model
+c. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
 
 ## Exercise 6 - Assess which model performs best
 ### Evaluation
