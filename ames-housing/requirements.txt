@@ -8,5 +8,5 @@ altair==5.1.1
 plotly==5.16.1
 shap==0.42.1
 
-# To run Juoyter Notebooks and Python code in interactive mode in VS Code:
+# To run Jupyter Notebooks and Python code in interactive mode in VS Code:
 ipykernel==6.27.1

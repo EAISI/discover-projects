@@ -53,30 +53,33 @@ b2. Alternatively, impute the categorical variables with the mode (most frequent
 
 c. Concatenate the numerical and the categorical data into a single data frame
 
+d. Reduce memory usage by converting string type data to category type and downcast numerical data to their smallest container size. Tip: see Pandas' [astype() method](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric() method](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html).
+
 ## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
 ### Data Understanding (continued)
 
 a. Conduct descriptive/summary statistics on the Y variable (mean, median, std, range)
 
-b. Visualize the distribution of the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html)
+b. Plot the distribution of the Y variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html)
 
-b. Investigate how `Gr Liv Area` (numerical) relates to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
+c. Investigate how `Gr Liv Area` (numerical) relates to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
 
-c. Investigate how `Neighborhood` (categorical) relates to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
+d. Investigate how `Neighborhood` (categorical) relates to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html)
 
-d.  What do you observe?
 
 ### Data Preparation (continued)
 
-e. Assess the distribution of `SalePrice` in the previous exercise. What do you observe? Log-transform the outcome variable. What does it mean for the performance of the prediction model?
+e. Assess the distribution of `SalePrice` in exercise 4b. What did you observe? What does it mean for the performance of the prediction model? Log-transform the outcome variable
 
-f. Assess `Gr Liv Area` for all houses in the previous exercise. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
+f. Assess `Gr Liv Area` for all houses in exercise 4d. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
 
 ### Data Understanding (continued)
 
 g. Draw scatter plots between Y and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
 
-h. Draw correlation plots to investigate the correlations between Y and each of the numerical variables (Hint: calculate the Pearson correlation coefficient and use [`seaborn.heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html))
+h. Create a table showing the Pearson correlation coefficients between Y and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
+
+i. Create correlation plots showing the correlations between each pair of numerical variables, incl. Y. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/)
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
