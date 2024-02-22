@@ -110,6 +110,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venv_macbookpro/
+venv_macstudio/
+venv_how_to_install.txt # Txt file with key CLI scripts to install virtual environment.
 
 # Spyder project settings
 .spyderproject
