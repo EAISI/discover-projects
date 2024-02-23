@@ -95,3 +95,7 @@ c. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.
 
 The performance metric for the prediction model should be the Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sale price. This makes it the Root-Mean-Squared-Log-Error (RMSLE). By plotting a histogram of the sale price you will understand why the logarithm is recommended.
 
+## Exercise 7 - Use SHAP values to explain how features contribute to Sale Price prediction
+
+See 'exercise-7-shape.ipynb' in the folder 'ames-housing\'. 
+
