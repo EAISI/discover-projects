@@ -10,3 +10,6 @@ shap==0.42.1
 
 # To run Jupyter Notebooks and Python code in interactive mode in VS Code:
 ipykernel==6.27.1
+
+# To run Jupyter Widgets
+ipywidgets==8.1.2
