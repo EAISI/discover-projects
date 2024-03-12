@@ -13,3 +13,6 @@ ipykernel==6.27.1
 
 # To run Jupyter Widgets
 ipywidgets==8.1.2
+
+# To be able to show 3D scatter
+nbformat==5.10.2
