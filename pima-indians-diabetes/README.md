@@ -35,7 +35,7 @@ The variable "Outcome" refers to the presence of diabetes and hence is the varia
   - Visualize the relation between Y and a few correlated X-variables 
 
 ### Exercise 3
-  - Estimate a linear model, LASSO model and a kNN model on the train set. Inspect the outcomes of the model. Which model performs best?
+  - Estimate a logistic regression, a kNN model and a Random Forest on the train set. Inspect the outcomes of the model. Which model performs best?
   - Interpret the different models and argue which one is more easily explainable. Use any of the following libraries for interpreting models: [SHAP](https://shap.readthedocs.io/en/latest/), [lime](https://github.com/marcotcr/lime), [sklearn partial dependence plot](https://scikit-learn.org/stable/modules/partial_dependence.html), [ELI5](https://eli5.readthedocs.io/en/latest/)
   
 
