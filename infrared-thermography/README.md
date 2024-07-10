@@ -8,5 +8,5 @@ Please read the accompanying paper [Infrared Thermography for Measuring Elevated
 
 ## Prediction task
 
-- Train and evaluate a regression model to predict the oral temperature using the environment information as well as the thermal image readingsl;
-- Clarfiy and evaluate for the first four phases of the CRISP-DM model (Business Understanding, Data Understanding, Data Preparation, Modeling) by writing a paragraph for each phase, explaining your results and insights.
+- Train and evaluate a regression model to predict the oral temperature using the environment information as well as the thermal image readings;
+- Clarify and evaluate for the first five phases of the CRISP-DM model (Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation) by writing a paragraph for each phase, explaining your results and insights.
