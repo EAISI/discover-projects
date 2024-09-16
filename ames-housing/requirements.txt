@@ -1,3 +1,6 @@
+# Speed up package installation and ensure compatibility
+wheel==0.44.0
+
 # Math functions and data wrangling.
 numpy==1.25.2
 pandas==2.1.0
@@ -28,11 +31,19 @@ nbformat==5.10.2
 # Calculate UMAP embedding
 umap-learn==0.5.5
 
-# Reading and writing text from and to Word documents.
-python-docx==1.1.0
+# Interact with OpenAI API.
+openai==1.6.0
 
-# Writing data to Excel workbooks.
+# Read/write Word, PowerPoint, and Excel files:
+python-docx==1.1.0
+python-pptx==1.0.2
 openpyxl==3.1.2
 
-# Interacting with OpenAI API
-openai==1.6.0
+# Read PDF files:
+pdftotext==2.2.2
+
+# Obtain closest neighbors.
+annoy==1.17.3
+
+# Tokenize text.
+tiktoken==0.7.0
