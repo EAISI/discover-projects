@@ -74,7 +74,7 @@ $$
 − \frac{1}{𝑁} \sum_{i=1}^{N}[y_i \log(p_i) + (1 - y_1)\log(1-p_i)]
 $$
 
-where $y_i$ is the label (0 and 1 for binary) and pi is the predicted probability of the data point being 1 for all N points.
+where $y_i$ is the label (0 and 1 for binary) and $p_i$ is the predicted probability of the data point being 1 for all N points.
 
 ## Data
 
