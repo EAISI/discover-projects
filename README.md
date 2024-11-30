@@ -36,7 +36,10 @@ To enhance current business improvement techniques the application of feature se
 
 The dataset presented in this case represents a selection of such features where each example represents a single production entity with associated measured features and the labels represent a simple pass/fail yield for in house line testing, figure 2, and associated date time stamp. Where .1 corresponds to a pass and 1 corresponds to a fail and the data time stamp is for that specific test point. Available on [Kaggle](https://www.kaggle.com/paresh2047/uci-semcom) and the [UCI Machine Learning repository](https://archive.ics.uci.edu/ml/datasets/SECOM).
 
+### [Neo bank churn prediction (2024)](https://www.kaggle.com/competitions/neo-bank-non-sub-churn-prediction/overview)
+You have been hired as a data scientist at Neo bank, who are experiencing huge problems. The competition gets harder and management has the feeling that churn is becoming a problem. Some initial experiments with simple behavioral rules have shown that customer behaviour can in fact be predicted, but they require you to do it. It is your goal to create a churn definition, implement it and predict churn.
 
+This is a relatively new data set, which is quite large and challenging. Have a go at it as a second project.
   
 ## Using this repository
 
