@@ -33,7 +33,7 @@ Load 'AmesHousing.csv' in your Python environment.
 
 a. Which variables are numerical? And which are categorical? How many variables do we have of both types?
 
-b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete? (hint: use `info()`)
+b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete?
 
 c. Create a frequency table counting the number of missing values per variable
 
@@ -53,7 +53,7 @@ b2. Alternatively, impute the categorical variables with the mode (most frequent
 
 c. Concatenate the numerical and the categorical data into a single data frame
 
-d. Reduce memory usage by converting string type data to category type and downcast numerical data to their smallest container size. Tip: see Pandas' [astype() method](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric() method](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html).
+d. Reduce memory usage by converting string type data to category type and downcast numerical data to their smallest container size. Tip: see Pandas' [astype() method](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric() method](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html). TO BE UPDATED TO USING POLARS.
 
 ## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
 ### Data Understanding (continued)
