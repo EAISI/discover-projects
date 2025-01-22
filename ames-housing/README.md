@@ -67,37 +67,37 @@ d. Reduce the memory usage by casting string type to category type data and nume
 ## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
 ### Data Understanding (continued)
 
-a. Conduct descriptive/summary statistics on the Y variable (mean, median, std, range)
+a. Conduct descriptive/summary statistics on the outcome variable (mean, median, std, and range).
 
-b. Plot the distribution of the Y variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html)
+b. Plot the distribution of the outcome variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html).
 
-c. Investigate how `Gr Liv Area` (numerical) relates to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
+c. Investigate how `Gr Liv Area` (numeric) and the outcome variable correlate to. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-d. Investigate how `Neighborhood` (categorical) relates to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html)
+d. Investigate how `Neighborhood` (categorical) relates to the outcome variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
 
 
 ### Data Preparation (continued)
 
-e. Assess the distribution of `SalePrice` in exercise 4b. What did you observe? What does it mean for the performance of the prediction model? Log-transform the outcome variable
+e. Assess the distribution of `SalePrice` in exercise 4b. What did you observe? What does it mean for the performance of the prediction model? Log-transform the outcome variable.
 
-f. Assess `Gr Liv Area` for all houses in exercise 4d. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
+f. Assess `Gr Liv Area` for all houses in exercise 4c. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
 
 ### Data Understanding (continued)
 
-g. Draw scatter plots between Y and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
+g. Draw scatter plots between Y and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-h. Create a table showing the Pearson correlation coefficients between Y and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
+h. Create a table showing the Pearson correlation coefficients between Y and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html).
 
-i. Create correlation plots showing the correlations between each pair of numerical variables, incl. Y. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/)
+i. Create correlation plots showing the correlations between each pair of numerical variables, incl. Y. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
 
-a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).
 
-b. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) and [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)
+b. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) and [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html).
 
-c. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
+c. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
 ## Exercise 6 - Assess which model performs best
 ### Evaluation
