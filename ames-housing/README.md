@@ -84,11 +84,11 @@ f. Assess `Gr Liv Area` for all houses in exercise 4c. What do you observe? Remo
 
 ### Data Understanding (continued)
 
-g. Draw scatter plots between Y and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
+g. Draw scatter plots between the outcome variable and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-h. Create a table showing the Pearson correlation coefficients between Y and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html).
+h. Create a table showing the Pearson correlation coefficients between the outcome variable and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html).
 
-i. Create correlation plots showing the correlations between each pair of numerical variables, incl. Y. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
+i. Create correlation plots showing the correlations between each pair of numerical variables, incl. the outcome variable. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
