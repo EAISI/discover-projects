@@ -22,22 +22,31 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 - As an extra challenge, you can try to trade-off the number of predictors (less is better) vs. performance. Can you make the top 10% (RMSLE 0.123) with the least number of predictors?
 
+### Polars vs Pandas
+
+For data manipulation you are free to use the [Pandas](https://pandas.pydata.org/docs/reference/index.html) or the [Polars](https://docs.pola.rs/api/python/stable/reference/index.html) package. Polars is a blazingly fast data manipulation library. It is an Apache Arrow DataFrame library implemented in Rust. Polars is a replacement for Pandas, and it is faster than Pandas. The Polars documentation claims that Polars is a 'drop-in replacement' for Pandas. In my view that is not the case, the 'language' is different and it is not simply replacing 'pd.' by 'pl.'. Moreover, some data manipulations in require a smaller script in Pandas than in Polars. Polars is relatively new and still actively developed; the first commit was in [2020](https://pola.rs/posts/company-announcement/). Pandas development started in [2008](https://pandas.pydata.org/about/).
+
+Pieter's solution notebook contains solutions using both Pandas and Polars. It is recommended to use both Pandas and Polars for the first two exercises. Exercise 3 onwards feel free to choose one of the two.
 
 ## Exercise 1 - Load the 'Ames Housing' dataset
 ### Data Understanding
 
-Load 'AmesHousing.csv' in your Python environment.
+a. Load 'AmesHousing.csv' in your Python environment. Try the following two routes:
+
+    (1) Using a URL to AmesHousing.csv on GitHub
+
+    (2) Loading a local copy of AmesHousing.csv on your computer. 
+
+b. Load 'Neighborhood names.xlsx' and merge the two-column table with the Ames Housing data. What does 'Neighborhood_full' enable you to do?
 
 ## Exercise 2 - Descriptive statistics
 ### Data Understanding (continued)
 
-a. Which variables are numerical? And which are categorical? How many variables do we have of both types?
+a. Which variables are numeric? And which are strings? How many variables do we have of both types? How many observations do we have? Suggestion: Split the original data in a data frame containing the numeric data and a data frame containing the string data. 
 
-b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete?
+b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete? And what other, missing-like values do we observe in the string data? What different behavior do you observe using the `read_csv()` function from both Pandas and Polars and using the default settings? Create a frequency table of missing data per variable.
 
-c. Create a frequency table counting the number of missing values per variable
-
-d. Conduct descriptive/summary statistics for numerical variables (e.g., mean, median, std, range) and for categorical variables (e.g., number of unique values, mode, and their frequency)
+c. Conduct descriptive/summary statistics for numeric variables (e.g., mean, median, std, and range) and for string variables (e.g., number of unique values, mode, and their frequency)
 
 
 ## Exercise 3 - Impute missing data
@@ -45,50 +54,50 @@ d. Conduct descriptive/summary statistics for numerical variables (e.g., mean, m
 
 There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-a. Impute the numerical variables with the median value of the available data
+a. Impute the numeric variables with the median value of the available data.
 
-b1. Impute the categorical variables with the label "other"
+b1. Impute the string variables with the label "other".
 
-b2. Alternatively, impute the categorical variables with the mode (most frequent value) of the available data
+b2. Alternatively, impute the string variables with the mode (most frequent value) of the available data. In case you use Pandas, why does df_name.mode() result in data frame with two rows?
 
-c. Concatenate the numerical and the categorical data into a single data frame
+c. Concatenate the imputed numeric (a.) and string (b2.) data frame into a single data frame.
 
-d. Reduce memory usage by converting string type data to category type and downcast numerical data to their smallest container size. Tip: see Pandas' [astype() method](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric() method](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html). TO BE UPDATED TO USING POLARS.
+d. Reduce the memory usage by casting string type to category type data and numeric data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) method and Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory did we save by downcasting?
 
 ## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
 ### Data Understanding (continued)
 
-a. Conduct descriptive/summary statistics on the Y variable (mean, median, std, range)
+a. Conduct descriptive/summary statistics on the outcome variable (mean, median, std, and range).
 
-b. Plot the distribution of the Y variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html)
+b. Plot the distribution of the outcome variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html).
 
-c. Investigate how `Gr Liv Area` (numerical) relates to the Y variable. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
+c. Investigate how `Gr Liv Area` (numeric) and the outcome variable correlate to. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-d. Investigate how `Neighborhood` (categorical) relates to the Y variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html)
+d. Investigate how `Neighborhood` (categorical) relates to the outcome variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
 
 
 ### Data Preparation (continued)
 
-e. Assess the distribution of `SalePrice` in exercise 4b. What did you observe? What does it mean for the performance of the prediction model? Log-transform the outcome variable
+e. Assess the distribution of `SalePrice` in exercise 4b. What did you observe? What does it mean for the performance of the prediction model? Log-transform the outcome variable.
 
-f. Assess `Gr Liv Area` for all houses in exercise 4d. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
+f. Assess `Gr Liv Area` for all houses in exercise 4c. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
 
 ### Data Understanding (continued)
 
-g. Draw scatter plots between Y and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html)
+g. Draw scatter plots between the outcome variable and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-h. Create a table showing the Pearson correlation coefficients between Y and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
+h. Create a table showing the Pearson correlation coefficients between the outcome variable and each of the numerical variables. Tip: see [pearsonr()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html).
 
-i. Create correlation plots showing the correlations between each pair of numerical variables, incl. Y. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/)
+i. Create correlation plots showing the correlations between each pair of numerical variables, incl. the outcome variable. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
 
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
 
-a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).
 
-b. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) and [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)
+b. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) and [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html).
 
-c. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
+c. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
 ## Exercise 6 - Assess which model performs best
 ### Evaluation
