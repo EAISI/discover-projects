@@ -35,18 +35,18 @@ a. Load 'AmesHousing.csv' in your Python environment. Try the following two rout
 
     (1) Using a URL to AmesHousing.csv on GitHub
 
-    (2) Loading a local copy of AmesHousing.csv on your computer. 
+    (2) Loading a local copy of AmesHousing.csv from your computer. 
 
 b. Load 'Neighborhood names.xlsx' and merge the two-column table with the Ames Housing data. What does 'Neighborhood_full' enable you to do?
 
 ## Exercise 2 - Descriptive statistics
 ### Data Understanding (continued)
 
-a. Which variables are numeric? And which are strings? How many variables do we have of both types? How many observations do we have? Suggestion: Split the original data in a data frame containing the numeric data and a data frame containing the string data. 
+a. Which variables are numerical? And which are strings? How many variables do we have of both types? How many observations do we have? Suggestion: Split the original data in a data frame containing the numerical data and a data frame containing the string data. 
 
-b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete? And what other, missing-like values do we observe in the string data? What different behavior do you observe using the `read_csv()` function from both Pandas and Polars and using the default settings? Create a frequency table of missing data per variable.
+b. How many missing values do each of the variables have (variable completeness) and what are the variable types? Is `SalePrice` complete? And what other, missing-like values do you observe in the string data? What different behavior do you observe using the `read_csv()` function from both Pandas and Polars and using the default settings? Create a frequency table of missing data per variable.
 
-c. Conduct descriptive/summary statistics for numeric variables (e.g., mean, median, std, and range) and for string variables (e.g., number of unique values, mode, and their frequency)
+c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, median, std, and range) and for string variables (e.g., number of unique values, mode, and their frequency)
 
 
 ## Exercise 3 - Impute missing data
@@ -54,26 +54,26 @@ c. Conduct descriptive/summary statistics for numeric variables (e.g., mean, med
 
 There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-a. Impute the numeric variables with the median value of the available data.
+a. Impute the numerical variables with the median value of the available data.
 
 b1. Impute the string variables with the label "other".
 
-b2. Alternatively, impute the string variables with the mode (most frequent value) of the available data. In case you use Pandas, why does df_name.mode() result in data frame with two rows?
+b2. Alternatively, impute the string variables with the mode (most frequent value) of the available data. In case you use Pandas, why does df_name.mode() result in a data frame with two rows?
 
-c. Concatenate the imputed numeric (a.) and string (b2.) data frame into a single data frame.
+c. Concatenate the imputed numerical (a.) and string (b2.) data frame into a single data frame.
 
-d. Reduce the memory usage by casting string type to category type data and numeric data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) method and Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory did we save by downcasting?
+d. Reduce the memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) method and Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory did we save by downcasting?
 
-## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other features
+## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other variables
 ### Data Understanding (continued)
 
 a. Conduct descriptive/summary statistics on the outcome variable (mean, median, std, and range).
 
 b. Plot the distribution of the outcome variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html).
 
-c. Investigate how `Gr Liv Area` (numeric) and the outcome variable correlate to. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
+c. Investigate how `Gr Liv Area` (numerical) and the outcome variable correlate to. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
-d. Investigate how `Neighborhood` (categorical) relates to the outcome variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
+d. Investigate how `Neighborhood_full` (categorical) relates to the outcome variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
 
 
 ### Data Preparation (continued)
