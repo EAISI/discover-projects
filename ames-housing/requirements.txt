@@ -38,6 +38,7 @@ umap-learn==0.5.5
 python-docx==1.1.0
 python-pptx==1.0.2
 openpyxl==3.1.2
+xlwings==0.33.4
 fastexcel==0.12.0
 
 # Print stuff to the console.
@@ -55,13 +56,13 @@ interpret==0.6.9
 # case you want to exercise with the 'gen_ai' notebooks, turn them back on.
 
 # Interacting with OpenAI API.
-#openai==1.6.0
+openai==1.58.1
 
 # Read PDF files:
-#pymupdf4llm==0.0.17
+pymupdf4llm==0.0.17
 
 # Obtain closest neighbors.
 #annoy==1.17.3
 
 # Tokenize text.
-#tiktoken==0.7.0
+tiktoken==0.8.0
