@@ -1,0 +1,74 @@
+[project]
+name = "ames-housing"
+version = "0.0.1"
+description = "Add your description here"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+
+    # Math functions and data wrangling.
+    "numpy==1.25.2",
+    "pandas==2.1.0",
+    "polars==1.17.1",
+    "scipy==1.11.2",
+
+    # Machine Learning
+    "scikit-learn==1.3.0",
+    "kneed==0.8.5",
+
+    # Visualization
+    "matplotlib==3.7.2",
+    "seaborn==0.12.2",
+    "altair==5.1.1",
+    "plotly==5.16.1",
+
+    # Interpretable Machine Learning
+    "shap==0.42.1",
+
+    # To run Jupyter Notebooks and Python code in interactive mode in VS Code:
+    "ipykernel==6.27.1",
+
+    # To run Jupyter Widgets
+    "ipywidgets==8.1.2",
+
+    # To be able to show 3D scatter in Jupyter Notebooks
+    "nbformat==5.10.2",
+
+    # Calculate UMAP embedding
+    "umap-learn==0.5.5",
+
+    # Read/write Word, PowerPoint, and Excel files:
+    "python-docx==1.1.0",
+    "python-pptx==1.0.2",
+    "openpyxl==3.1.2",
+    "xlwings==0.33.4",
+    "fastexcel==0.12.0",
+
+    # Print stuff to the console.
+    "icecream==2.1.3",
+
+    # Run InterpretML (GAM).
+    # https://github.com/interpretml/interpret/
+    # https://interpret.ml
+    "interpret==0.6.9",
+
+    # The following packages are needed to run the Jupyter Notebooks in the
+    # folder 'gen_ai\' in the folder 'pieterov\'. These notebooks demonstrate
+    # using Open AI's API to connect and use their LLMs. Fow now, I commented
+    # out the packages since they not needed for the Ames Housing project. In
+    # case you want to exercise with the 'gen_ai' notebooks, turn them back on.
+
+    # Load environment variables from a .env file.
+    "python-dotenv==1.1.1",
+    
+    # Interacting with OpenAI API.
+    "openai==1.58.1",
+
+    # Read PDF files:
+    "pymupdf4llm==0.0.17",
+
+    # Obtain closest neighbors.
+    #"annoy==1.17.3",
+
+    # Tokenize text.
+    "tiktoken==0.8.0"
+]
