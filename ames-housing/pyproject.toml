@@ -3,6 +3,7 @@ name = "ames-housing"
 version = "0.0.1"
 description = "Add your description here"
 requires-python = ">=3.10,<3.11"
+
 dependencies = [
 
     # Math functions and data wrangling.
@@ -49,7 +50,7 @@ dependencies = [
     # Run InterpretML (GAM).
     # https://github.com/interpretml/interpret/
     # https://interpret.ml
-    "interpret==0.6.9",
+    #"interpret==0.6.9",
 
     # The following packages are needed to run the Jupyter Notebooks in the
     # folder 'gen_ai\' in the folder 'pieterov\'. These notebooks demonstrate
@@ -59,7 +60,7 @@ dependencies = [
 
     # Load environment variables from a .env file.
     "python-dotenv==1.1.1",
-    
+
     # Interacting with OpenAI API.
     "openai==1.58.1",
 
@@ -70,5 +71,5 @@ dependencies = [
     #"annoy==1.17.3",
 
     # Tokenize text.
-    "tiktoken==0.8.0"
+    "tiktoken==0.8.0",
 ]
