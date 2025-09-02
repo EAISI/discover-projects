@@ -25,14 +25,11 @@ dependencies = [
     # Interpretable Machine Learning
     "shap==0.42.1",
 
-    # To run Jupyter Notebooks and Python code in interactive mode in VS Code:
-    "ipykernel==6.27.1",
-
-    # To run Jupyter Widgets
-    "ipywidgets==8.1.2",
-
-    # To be able to show 3D scatter in Jupyter Notebooks
-    "nbformat==5.10.2",
+    # To run Jupyter Widgets and to show 3D scatter in Jupyter Notebooks.
+    # To run Jupyter Notebooks and Python code in interactive mode in VS Code.
+    # This meta-package installs ipywidgets, ipywidgets and nbformat, among
+    # others.
+    "jupyter==1.1.1",
 
     # Calculate UMAP embedding
     "umap-learn==0.5.5",
