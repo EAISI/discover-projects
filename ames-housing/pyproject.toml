@@ -1,7 +1,7 @@
 [project]
-name = "introduction-to-data-and-ai"
+name = "ames-housing"
 version = "0.0.2"
-description = "These packages are used in 'Introduction Data & AI' in addition to Python 3.12.13"
+description = "These packages are used in the Ames Housing case of 'Introduction Data & AI' in addition to Python 3.12.13"
 requires-python = ">=3.12,<3.13"
 
 dependencies = [
