@@ -1,8 +1,9 @@
 [project]
 name = "ames-housing"
-version = "0.0.2"
-description = "These packages are used in the Ames Housing case of 'Introduction Data & AI' in addition to Python 3.12.13"
-requires-python = ">=3.12,<3.13"
+version = "0.0.3"
+description = "These packages are used in the 'Introduction to Data & AI' program"
+#requires-python = ">=3.12,<3.13"
+requires-python = "==3.12.10"
 
 dependencies = [
     # For reference, see: https://pypi.org/project/
@@ -32,6 +33,12 @@ dependencies = [
     # This meta-package installs ipywidgets, ipywidgets and nbformat, among
     # others.
     "jupyter>=1.1.1",
+
+   # Saving and loading Scikit-learn models (alternative to pickle).
+    "joblib>=1.5.3",
+
+    # Send HTTP requests to an API.
+    "requests>=2.33.1",
 
     # To work with reactive Python notebooks that are reproducible, 
     # git-friendly, and deployable as scripts or apps.
@@ -78,8 +85,5 @@ dependencies = [
     #"annoy>=1.17.3",
 
     # Tokenize text.
-    "tiktoken>=0.12.0",
-
-    # Send HTTP requests to an API.
-    "requests>=2.33.1",
+    "tiktoken>=0.12.0"
 ]
