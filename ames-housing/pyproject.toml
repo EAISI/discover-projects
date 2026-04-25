@@ -1,5 +1,5 @@
 [project]
-name = "ames-housing"
+name = "introduction-to-data-and-ai"
 version = "0.0.3"
 description = "These packages are used in the 'Introduction to Data & AI' program"
 #requires-python = ">=3.12,<3.13"
