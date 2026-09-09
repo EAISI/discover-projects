@@ -16,7 +16,7 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 **Project goal**: Develop a model that predicts sale price of a house given a set of it's features,
 
-- The performance metric for your prediction model is the `Root Mean Squared Logarithmic Error` (RMSLE), i.e., the root mean squared error between the logarithm of the predicted value and the logarithm of the observed sale price. Taking the logarithm means that errors in predicting overly expensive houses and cheaper houses will affect the result equally.
+- The recommended performance metric for your prediction model is the `Root Mean Squared Logarithmic Error` (`RMSLE`). In housing data, the outcome variable is rarely symmetrically (normally) distributed; it is heavily right-skewed, with many moderately priced homes and a few exceptionally high-priced homes. Under standard RMSE, an error of $50,000 on a $1,000,000 mansion is penalized just as heavily as a $50,000 error on a $100,000 starter home. By taking the logarithm of the observed and predicted prices, RMSLE measures relative percentage differences, ensuring both cheap and expensive houses impact the metric fairly.
 
 - Looking at the [public leaderboard](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/leaderboard), the top 2% have an RMSLE of 0.00044, whilst 25th-percentile and the median performance is at 0.125 and 0.14, respectively.
 
@@ -48,21 +48,28 @@ b. How many missing values do each of the variables have (variable completeness)
 
 c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, median, std, and range) and for string variables (e.g., number of unique values, mode, and their frequency)
 
-
-## Exercise 3 - Impute missing data
+## Exercise 3 - Train/Test Split and Impute missing data
 ### Data Preparation
 
-There a several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
+Before transforming or imputing any data, we must protect ourselves against data leakage. The test set must act as unseen future data.
 
-a. Impute the numerical variables with the median value of the available data.
+a. Split the dataset into a training set (70%) and a test set (30%). Set `random_state=42` to ensure reproducible results.
 
-b1. Impute the string variables with the label "other".
+> [!IMPORTANT]
+> From this point on, all exploratory analysis and calculation of preprocessing statistics (mean, median, mode) must be learned strictly from the training set and then applied to both the training and test sets.
 
-b2. Alternatively, impute the string variables with the mode (most frequent value) of the available data. In case you use Pandas, why does df_name.mode() result in a data frame with two rows?
+There are several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-c. Concatenate the imputed numerical (a.) and string (b2.) data frame into a single data frame.
+b. Impute numerical missing values in both the training and test sets using the median values computed from the training set.
 
-d. Reduce the memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) method and Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory did we save by downcasting?
+c1. Impute string missing values in both the training and test sets using the label `"other"`.
+
+c2. Alternatively, impute string missing values in both sets using the mode (most frequent value) computed from the training set. In case you use Pandas, why does `df_name.mode()` result in a DataFrame with two rows?
+
+d. Concatenate the imputed numerical (b.) and string (c2.) subsets into a combined training set and a combined test set.
+
+e. Reduce memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) methods, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory did we save by downcasting?
+
 
 ## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other variables
 ### Data Understanding (continued)
@@ -75,12 +82,12 @@ c. Investigate how `Gr Liv Area` (numerical) and the outcome variable correlate 
 
 d. Investigate how `Neighborhood_full` (categorical) relates to the outcome variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
 
-
 ### Data Preparation (continued)
 
-e. Assess the distribution of `SalePrice` in exercise 4b. What did you observe? What does it mean for the performance of the prediction model? Log-transform the outcome variable.
+e. Assess the distribution of `SalePrice` in exercise 4b. What do you observe? How does this skewed distribution motivate using RMSLE instead of RMSE as our evaluation metric, without needing to transform `SalePrice`?
 
 f. Assess `Gr Liv Area` for all houses in exercise 4c. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
+
 
 ### Data Understanding (continued)
 
@@ -93,6 +100,9 @@ i. Create correlation plots showing the correlations between each pair of numeri
 ## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
 ### Modeling
 
+> [!TIP]
+> Because we kept `SalePrice` in its original currency (which keeps our predictions and later SHAP values easily interpretable), use scikit-learn's [`root_mean_squared_log_error()`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.root_mean_squared_log_error.html) to evaluate `y_test` against `y_pred` for each model you train.
+
 a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).
 
 b. Build a pipeline including imputation, encoding, scaling, and modelling - see sklearn's [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html). Estimate a Linear Regression model based on `Neighborhood` and three numerical features of your choice. Tip: use sklearn's [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to apply different preprocessing steps to numerical and categorical features (imputation + scaling vs. imputation + one-hot encoding). This pipeline will be used on Day 6 of the Introduction program (Deployment).
@@ -102,10 +112,13 @@ c. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable
 d. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
 ## Exercise 6 - Assess which model performs best
-
 ### Evaluation
 
-The performance metric for the prediction model should be the Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sale price. This makes it the Root-Mean-Squared-Log-Error (RMSLE). By plotting a histogram of the sale price you will understand why the logarithm is recommended.
+Compare the test performance (RMSLE) across all estimated models (e.g., in a summary table or bar chart).
+
+a. Which model performs best on the test set? What RMSLE do you observe?
+
+b. How does your best model compare to the Kaggle benchmark percentiles mentioned in the introduction?
 
 ## Exercise 7 - Use SHAP values to explain how features contribute to Sale Price prediction
 
