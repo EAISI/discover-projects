@@ -1,20 +1,31 @@
-![](https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png)
+---
+title: Ames Housing
+subtitle: Predicting Sales Prices with Machine Learning
+author: Pieter Overdevest
+email: pieter@innovatewithdata.nl
+date: Sept 9, 2026
+version: 1.2.0
+---
 
-# Ames Housing dataset
+<p align="center">
+  <img src="images/banner.jpg" alt="Ames Housing">
+</p>
+
+
 
 This case is inspired by Kaggle's [Getting Started Prediction Competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview). The exercises are structured based on the CRISP-DM framework. As you'll work through the exercises, you will experience first hand that CRISP-DM is a non-linear process.
 
-## Let's get started
+# Let's get started
 
-### Business Understanding
+## Business Understanding
 
-**Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sale price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the more experienced agents are not always readily available. So, the management team of Homely Homes has decided to go full on data, and is requesting you to develop a model that can predict the sale price by the push of a button. 
+**Business context**: Real estate agency 'Homely Homes' incorporated in Ames, Iowa (USA), needs a good first impression of the sale price of a house as soon as it comes on the market, without having to visit the house. Today, 'Homely Homes' uses their team of real estate agents of different levels of expertise to get an estimate based on the information that is available online. The quality of the estimates differs highly depending on who is asked. And, not surprisingly, the more experienced agents are not always readily available. So, the management team of Homely Homes decides to go full on data and requests you to develop a model that can predict the sale price by the push of a button.
 
-**Business objective**: To become independent on real estate agents to estimate sale prices.
+**Business objective**: To become independent of real estate agents to estimate sale prices.
 
 **Scope**: All homes in the city of Ames, IA (USA).
 
-**Project goal**: Develop a model that predicts sale price of a house given a set of it's features,
+**Project goal**: Develop a model that predicts sale price of a house given a set of its features,
 
 - The recommended performance metric for your prediction model is the `Root Mean Squared Logarithmic Error` (`RMSLE`). In housing data, the outcome variable is rarely symmetrically (normally) distributed; it is heavily right-skewed, with many moderately priced homes and a few exceptionally high-priced homes. Under standard RMSE, an error of $50,000 on a $1,000,000 mansion is penalized just as heavily as a $50,000 error on a $100,000 starter home. By taking the logarithm of the observed and predicted prices, RMSLE measures relative percentage differences, ensuring both cheap and expensive houses impact the metric fairly.
 
@@ -22,25 +33,25 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 - As an extra challenge, you can try to trade-off the number of predictors (less is better) vs. performance. Can you make the top 10% (RMSLE 0.123) with the least number of predictors?
 
-### Polars vs Pandas
+## Polars vs Pandas
 
-For data manipulation you are free to use the [Pandas](https://pandas.pydata.org/docs/reference/index.html) or the [Polars](https://docs.pola.rs/api/python/stable/reference/index.html) package. Polars is a blazingly fast data manipulation library. It is an Apache Arrow DataFrame library implemented in Rust. Polars is a replacement for Pandas, and it is faster than Pandas. The Polars documentation claims that Polars is a 'drop-in replacement' for Pandas. In my view that is not the case, the 'language' is different and it is not simply replacing 'pd.' by 'pl.'. Moreover, some data manipulations in require a smaller script in Pandas than in Polars. Polars is relatively new and still actively developed; the first commit was in [2020](https://pola.rs/posts/company-announcement/). Pandas development started in [2008](https://pandas.pydata.org/about/).
+Pieter's solution notebooks provide reference implementations in both [Pandas](https://pandas.pydata.org/docs/reference/index.html) and [Polars](https://docs.pola.rs/api/python/stable/reference/index.html) for data manipulation. Polars is a blazingly fast data manipulation library. It is an Apache Arrow DataFrame library implemented in Rust. Because Pandas is the foundational industry standard, it is essential that every participant becomes comfortable with it. If you are new to Python or data manipulation, stick with Pandas to build solid fundamentals. If you already have experience with Python and Pandas, you are strongly encouraged to take on the challenge of using Polars throughout the exercises to explore its modern syntax and speed.
 
-Pieter's solution notebook contains solutions using both Pandas and Polars. It is recommended to use both Pandas and Polars for the first two exercises. Exercise 3 onwards feel free to choose one of the two.
+Although Polars is often described as an alternative or even a 'drop-in replacement' for Pandas, in practice it is not simply a matter of replacing `pd.` with `pl.`. The syntax, idioms, and mental model are genuinely different, and certain data manipulations can feel more concise in Pandas. Pandas is mature and established (dating back to [2008](https://pandas.pydata.org/about/)), whereas Polars dates back to [2020](https://pola.rs/posts/company-announcement/). Despite being younger, Polars evolves rapidly and enjoys significant traction thanks to its remarkable speed and memory efficiency.
 
-## Exercise 1 - Load the 'Ames Housing' dataset
-### Data Understanding
+# Exercise 1 - Load the 'Ames Housing' dataset
+## Data Understanding
 
-a. Load 'AmesHousing.csv' in your Python environment. Try the following two routes:
+a. Load `AmesHousing.csv` in your Python environment. Try the following two routes:
 
-    (1) Using a URL to AmesHousing.csv on GitHub
+    (1) Using a URL to `AmesHousing.csv` on [GitHub](https://github.com/EAISI/discover-projects/tree/main/ames-housing/data).
 
-    (2) Loading a local copy of AmesHousing.csv from your computer. 
+    (2) Loading a local copy of `data/AmesHousing.csv` from your computer. 
 
 b. Load 'Neighborhood names.xlsx' and merge the two-column table with the Ames Housing data. What does 'Neighborhood_full' enable you to do?
 
-## Exercise 2 - Descriptive statistics
-### Data Understanding (continued)
+# Exercise 2 - Descriptive statistics
+## Data Understanding (continued)
 
 a. Which variables are numerical? And which are strings? How many variables do we have of both types? How many observations do we have? Suggestion: Split the original data in a data frame containing the numerical data and a data frame containing the string data. 
 
@@ -48,8 +59,8 @@ b. How many missing values do each of the variables have (variable completeness)
 
 c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, median, std, and range) and for string variables (e.g., number of unique values, mode, and their frequency)
 
-## Exercise 3 - Train/Test Split and Impute missing data
-### Data Preparation
+# Exercise 3 - Train/Test Split and Impute missing data
+## Data Preparation
 
 Before transforming or imputing any data, we must protect ourselves against data leakage. The test set must act as unseen future data.
 
@@ -68,28 +79,27 @@ c2. Alternatively, impute string missing values in both sets using the mode (mos
 
 d. Concatenate the imputed numerical (b.) and string (c2.) subsets into a combined training set and a combined test set.
 
-e. Reduce memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) methods, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory did we save by downcasting?
+e. Reduce memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) methods, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory do we save by downcasting?
 
 
-## Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other variables
-### Data Understanding (continued)
+# Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other variables
+## Data Understanding (continued)
 
 a. Conduct descriptive/summary statistics on the outcome variable (mean, median, std, and range).
 
 b. Plot the distribution of the outcome variable. What do we observe? Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html).
 
-c. Investigate how `Gr Liv Area` (numerical) and the outcome variable correlate to. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
+c. Investigate how `Gr Liv Area` (numerical) and the outcome variable correlate. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
 d. Investigate how `Neighborhood_full` (categorical) relates to the outcome variable. Tip: see Altair's [histogram](https://altair-viz.github.io/gallery/simple_histogram.html) and [boxplot](https://altair-viz.github.io/gallery/boxplot.html).
 
-### Data Preparation (continued)
+## Data Preparation (continued)
 
 e. Assess the distribution of `SalePrice` in exercise 4b. What do you observe? How does this skewed distribution motivate using RMSLE instead of RMSE as our evaluation metric, without needing to transform `SalePrice`?
 
 f. Assess `Gr Liv Area` for all houses in exercise 4c. What do you observe? Remove outliers. What does it mean for the scope of the prediction model?
 
-
-### Data Understanding (continued)
+## Data Understanding (continued)
 
 g. Draw scatter plots between the outcome variable and each of the numerical features. Tip: see Altair's [scatter plot](https://altair-viz.github.io/gallery/scatter_tooltips.html).
 
@@ -97,30 +107,29 @@ h. Create a table showing the Pearson correlation coefficients between the outco
 
 i. Create correlation plots showing the correlations between each pair of numerical variables, incl. the outcome variable. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
 
-## Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
-### Modeling
+# Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
+## Modeling
 
 > [!TIP]
-> Because we kept `SalePrice` in its original currency (which keeps our predictions and later SHAP values easily interpretable), use scikit-learn's [`root_mean_squared_log_error()`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.root_mean_squared_log_error.html) to evaluate `y_test` against `y_pred` for each model you train.
+> Because we keep `SalePrice` in its original currency (which keeps our predictions and later SHAP values easily interpretable), use scikit-learn's [`root_mean_squared_log_error()`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.root_mean_squared_log_error.html) to evaluate `y_test` against `y_pred` for each model you train.
 
 a. Estimate a Linear Regression model, see sklearn's [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).
 
-b. Build a pipeline including imputation, encoding, scaling, and modelling - see sklearn's [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html). Estimate a Linear Regression model based on `Neighborhood` and three numerical features of your choice. Tip: use sklearn's [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to apply different preprocessing steps to numerical and categorical features (imputation + scaling vs. imputation + one-hot encoding). This pipeline will be used on Day 6 of the Introduction program (Deployment).
+b. Build a pipeline including imputation, encoding, scaling, and modelling - see sklearn's [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html). Estimate a Linear Regression model based on `Neighborhood` and three numerical features of your choice. Tip: use sklearn's [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to apply different preprocessing steps to numerical and categorical features (imputation + scaling vs. imputation + one-hot encoding). We use this pipeline on Day 6 of the Introduction program (Deployment).
 
 c. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) and [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html).
 
 d. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
-## Exercise 6 - Assess which model performs best
-### Evaluation
+# Exercise 6 - Assess which model performs best
+## Evaluation
 
 Compare the test performance (RMSLE) across all estimated models (e.g., in a summary table or bar chart).
 
 a. Which model performs best on the test set? What RMSLE do you observe?
 
-b. How does your best model compare to the Kaggle benchmark percentiles mentioned in the introduction?
+b. How does your best model compare to the Kaggle benchmark percentiles listed in the introduction section?
 
-## Exercise 7 - Use SHAP values to explain how features contribute to Sale Price prediction
+# Exercise 7 - Use SHAP values to explain how features contribute to Sale Price prediction
 
-See 'exercise-7-shape.ipynb' in the folder 'ames-housing\'. 
-
+See `exercise-7-shap.ipynb` in the `ames-housing/code/` folder.
