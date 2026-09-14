@@ -23,13 +23,13 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 **Business objective**: To become independent of real estate agents to estimate sale prices.
 
-**Scope**: All homes in the city of Ames, IA (USA).
+**Scope**: All homes in the city of Ames, IA (USA). Though, with good reasons you may scope down the houses.
 
-**Project goal**: Develop a model that predicts sale price of a house given a set of its features,
+**Project goal**: Develop a model that predicts the sale price of a house given a set of its features:
 
 - The recommended performance metric for your prediction model is the `Root Mean Squared Logarithmic Error` (`RMSLE`). In housing data, the outcome variable is rarely symmetrically (normally) distributed; it is heavily right-skewed, with many moderately priced homes and a few exceptionally high-priced homes. Under standard RMSE, an error of $50,000 on a $1,000,000 mansion is penalized just as heavily as a $50,000 error on a $100,000 starter home. By taking the logarithm of the observed and predicted prices, RMSLE measures relative percentage differences, ensuring both cheap and expensive houses impact the metric fairly.
 
-- Looking at the [public leaderboard](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/leaderboard), the top 2% have an RMSLE of 0.00044, whilst 25th-percentile and the median performance is at 0.125 and 0.14, respectively.
+- Looking at the [public leaderboard](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/leaderboard), the top 2% have an RMSLE of 0.00044, whilst the 25th percentile and the median performance are at 0.125 and 0.14, respectively.
 
 - As an extra challenge, you can try to trade-off the number of predictors (less is better) vs. performance. Can you make the top 10% (RMSLE 0.123) with the least number of predictors?
 
@@ -42,13 +42,9 @@ Although Polars is often described as an alternative or even a 'drop-in replacem
 # Exercise 1 - Load the 'Ames Housing' dataset
 ## Data Understanding
 
-a. Load `AmesHousing.csv` in your Python environment. Try the following two routes:
+a. Load `AmesHousing.csv` from your `ames-housing/data/` folder.
 
-    (1) Using a URL to `AmesHousing.csv` on [GitHub](https://github.com/EAISI/discover-projects/tree/main/ames-housing/data).
-
-    (2) Loading a local copy of `data/AmesHousing.csv` from your computer. 
-
-b. Load 'Neighborhood names.xlsx' and merge the two-column table with the Ames Housing data. What does 'Neighborhood_full' enable you to do?
+b. Load 'Neighborhood names.xlsx' from your `ames-housing/data/` folder and merge the two-column table with the Ames Housing data. What does 'Neighborhood_full' enable you to do?
 
 # Exercise 2 - Descriptive statistics
 ## Data Understanding (continued)
@@ -75,7 +71,7 @@ b. Impute numerical missing values in both the training and test sets using the 
 
 c1. Impute string missing values in both the training and test sets using the label `"other"`.
 
-c2. Alternatively, impute string missing values in both sets using the mode (most frequent value) computed from the training set. In case you use Pandas, why does `df_name.mode()` result in a DataFrame with two rows?
+c2. Alternatively, impute string missing values in both sets using the mode (most frequent value) computed from the training set. In case you use Pandas, why does `df_pd.select_dtypes(include='str').mode()` result in a DataFrame with two rows?
 
 d. Concatenate the imputed numerical (b.) and string (c2.) subsets into a combined training set and a combined test set.
 
