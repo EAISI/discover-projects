@@ -55,7 +55,7 @@ b. How many missing values do each of the variables have (variable completeness)
 
 c. Conduct descriptive/summary statistics for numerical variables (e.g., mean, median, std, and range) and for string variables (e.g., number of unique values, mode, and their frequency)
 
-# Exercise 3 - Train/Test Split and Impute missing data
+# Exercise 3 - Train/test split data
 ## Data Preparation
 
 Before transforming or imputing any data, we must protect ourselves against data leakage. The test set must act as unseen future data.
@@ -65,20 +65,22 @@ a. Split the dataset into a training set (70%) and a test set (30%). Set `random
 > [!IMPORTANT]
 > From this point on, all exploratory analysis and calculation of preprocessing statistics (mean, median, mode) must be learned strictly from the training set and then applied to both the training and test sets.
 
+# Exercise 4 - Impute missing data
+## Data Preparation
+
 There are several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
 
-b. Impute numerical missing values in both the training and test sets using the median values computed from the training set.
+a. Impute numerical missing values in both the training and test sets using the median values computed from the training set.
 
-c1. Impute string missing values in both the training and test sets using the label `"other"`.
+b1. Impute string missing values in both the training and test sets using the label `"other"`.
 
-c2. Alternatively, impute string missing values in both sets using the mode (most frequent value) computed from the training set. In case you use Pandas, why does `df_pd.select_dtypes(include='str').mode()` result in a DataFrame with two rows?
+b2. Alternatively, impute string missing values in both sets using the mode (most frequent value) computed from the training set. In case you use Pandas, why does `df_pd.select_dtypes(include='str').mode()` result in a DataFrame with two rows?
 
-d. Concatenate the imputed numerical (b.) and string (c2.) subsets into a combined training set and a combined test set.
+c. Concatenate the imputed numerical (b.) and string (c2.) subsets into a combined training set and a combined test set.
 
-e. Reduce memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) methods, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory do we save by downcasting?
+d. Reduce memory usage by casting string type to category type data and numerical data to their smallest container size. Tip: see Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) methods, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method. How much memory do we save by downcasting?
 
-
-# Exercise 4 - Explore the outcome variable (`SalePrice`) and how it correlates to other variables
+# Exercise 5 - Explore the outcome variable (`SalePrice`) and how it correlates to other variables
 ## Data Understanding (continued)
 
 a. Conduct descriptive/summary statistics on the outcome variable (mean, median, std, and range).
@@ -103,7 +105,7 @@ h. Create a table showing the Pearson correlation coefficients between the outco
 
 i. Create correlation plots showing the correlations between each pair of numerical variables, incl. the outcome variable. Tip: see Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
 
-# Exercise 5 - Estimate a Linear Regression, a LASSO and a kNN model
+# Exercise 6 - Estimate a Linear Regression, a LASSO and a kNN model
 ## Modeling
 
 > [!TIP]
@@ -117,7 +119,7 @@ c. Estimate a LASSO model, see sklearn's [Lasso](https://scikit-learn.org/stable
 
 d. Estimate a kNN model, see sklearn's [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
-# Exercise 6 - Assess which model performs best
+# Exercise 7 - Assess which model performs best
 ## Evaluation
 
 Compare the test performance (RMSLE) across all estimated models (e.g., in a summary table or bar chart).
@@ -126,6 +128,6 @@ a. Which model performs best on the test set? What RMSLE do you observe?
 
 b. How does your best model compare to the Kaggle benchmark percentiles listed in the introduction section?
 
-# Exercise 7 - Use SHAP values to explain how features contribute to Sale Price prediction
+# Exercise 8 - Use SHAP values to explain how features contribute to Sale Price prediction
 
-See `exercise-7-shap.ipynb` in the `ames-housing/code/` folder.
+See `exercise-8-shap.ipynb` in the `ames-housing/code/` folder.
