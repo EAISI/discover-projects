@@ -64,7 +64,7 @@ e. Is `SalePrice` complete?
 
 f. Only for those who use Polars - What missing-like values do you observe in the string data? What different behavior do you observe using the `read_csv()` function from both Pandas and Polars while using the default settings?
 
-g. g. Conduct descriptive statistics for numeric variables (including: mean, median, std, and range) and for string variables (including: number of unique values, mode, and their frequency).
+g. Conduct descriptive statistics for numeric variables (including: mean, median, std, and range) and for string variables (including: number of unique values, mode, and their frequency).
 
 h. Optional - Test `f_describe()` from utils_pieter package.
 
