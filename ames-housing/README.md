@@ -174,7 +174,7 @@ b. Build a pipeline that includes imputation, one-hot encoding, scaling, and a t
 > See sklearn's [`Pipeline()`](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) and [`ColumnTransformer()`](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to apply different preprocessing steps to numeric and string features.
 
 > [!NOTE]
-> We use this pipeline on Day 6 of the Introduction program (Deployment).
+> We will use this pipeline on Day 6 of the Introduction program (Deployment).
 
 c. Fit a Lasso regression model while considering the following steps:
 
