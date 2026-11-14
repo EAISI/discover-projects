@@ -33,23 +33,41 @@ This case is inspired by Kaggle's [Getting Started Prediction Competition](https
 
 - As an extra challenge, you can try to trade-off the number of predictors (less is better) vs. performance. Can you make the top 10% (RMSLE 0.123) with the least number of predictors?
 
-## Polars vs Pandas
+## Polars vs Pandas (for DSE only)
 
 The [Ames Housing solution notebooks](https://github.com/EAISI/introduction-track-for-participants/tree/main/discover-project-examples/pieterov/code) provide reference implementations in both [Pandas](https://pandas.pydata.org/docs/reference/index.html) and [Polars](https://docs.pola.rs/api/python/stable/reference/index.html) for data manipulation. Polars is a blazingly fast data manipulation library. It is an Apache Arrow DataFrame library implemented in Rust. Because Pandas is/was the foundational industry standard, it is essential that every participant becomes comfortable with it. If you are new to Python or data manipulation, stick with Pandas to build solid fundamentals. If you already have experience with Python and Pandas, you are strongly encouraged to take on the challenge of using Polars throughout the exercises to explore its modern syntax and speed.
 
 Although Polars is often described as an alternative or even a 'drop-in replacement' for Pandas, in practice it is not simply a matter of replacing `pd.` with `pl.`. The syntax, idioms, and mental model are genuinely different, and certain data manipulations can feel more concise in Pandas. Pandas is mature and established (dating back to [2008](https://pandas.pydata.org/about/)), whereas Polars dates back to [2020](https://pola.rs/posts/company-announcement/). Despite being younger, Polars evolves rapidly and enjoys significant traction thanks to its remarkable speed and memory efficiency.
 
+## Getting started on your exercises (for DSE only)
+
+Take the following steps to:
+
+* Open VS Code
+* Select `File > New File.. > Jupyter Notebook` to create a new Jupyter Notebook
+* Save it in your `EAISI/ames-housing/code` folder
+* Select `File > Auto Save` to have VS Code automatically save your work, so you do not have to think about it
+* Proceed with Exercise 1
+
 # Exercise 1 - Load the 'Ames Housing' dataset
+
 ## Data Understanding
 
 > [!NOTE]
 > In the section `Set up Project Folder` of [Installation instruction – Visual Studio Code, Python 3.12, and Virtual Environments](https://github.com/EAISI/introduction-track-for-participants/blob/main/installation-instruction-vscode-pyenv-python-uv-ve.md#set-up-project-folder) you copied data files to your `ames-housing/data/raw/` folder.
 
-a. Load `AmesHousing.csv` from your `ames-housing/data/raw/` folder.
+a. Read the data from `AmesHousing.csv` from your `ames-housing/data/raw/` folder.
 
-b. Load 'Neighborhood names.xlsx' from your `ames-housing/data/raw` folder and merge the two-column table with the Ames Housing data. What is the primary key in 'Neighborhood names.xlsx' and what is the foreign key in 'AmesHousing.csv'? What is their role?
+> [!TIP]
+> Refer to Pandas' [read_csv()](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) method.
+
+b. In the same way read the data from 'Neighborhood names.xlsx' from your `ames-housing/data/raw` folder and merge the two-column table with the Ames Housing data. What is the primary key in 'Neighborhood names.xlsx' and what is the foreign key in 'AmesHousing.csv'? What is their role?
+
+> [!TIP]
+> Refer to Pandas' [read_excel()](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) and [merge()](https://pandas.pydata.org/docs/reference/api/pandas.merge.html#pandas.merge) methods.
 
 # Exercise 2 - Perform descriptive statistics
+
 ## Data Understanding (continued)
 
 a. How many variables and observations does the dataset have?
@@ -57,6 +75,9 @@ a. How many variables and observations does the dataset have?
 b. What data types are the variables, and how many are there of each data type?
 
 c. Split the original dataset into two DataFrames: one containing the numeric variables and one containing the string variables. Which variables belong to each type? Do the shapes of both DataFrames match your answers from the previous two questions?
+
+> [!TIP]
+> Refer to Scikit Learn's [train_test_split()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) method.
 
 d. Create a frequency table of missing data per variable for both the numeric and string DataFrames. How many missing values do each of the variables have? Include: variable name, total number of missing values, %completeness, and variable type.
 
@@ -69,6 +90,7 @@ g. Conduct descriptive statistics for numeric variables (including: mean, median
 h. Optional - Test `f_describe()` from utils_pieter package.
 
 # Exercise 3 - Split training and test set
+
 ## Data Preparation
 
 Before transforming or imputing any data, we must protect ourselves against data leakage. The test set must act as unseen future data, not as a means to train the model.
@@ -87,6 +109,7 @@ a. Split the original dataset into a training set (70%) and a test set (30%). Se
 > From this point on, all exploratory analysis and calculation of preprocessing statistics (mean, median, mode) must be learned strictly from the training set and then applied to both the training and test sets.
 
 # Exercise 4 - Impute missing data
+
 ## Data Preparation
 
 There are several missing values in the dataset, which need to be tackled before we can proceed with the rest of the analysis. There are many ways to impute missing values, but for now, impute missing values as follows:
@@ -105,6 +128,7 @@ d. Reduce memory usage by casting string type to category type data and numeric 
 > Refer to Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) function, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method for downcasting.
 
 # Exercise 5 - Explore the outcome variable (`SalePrice`) and how it correlates to feature variables
+
 ## Data Understanding (continued)
 
 a. Conduct descriptive statistics on the outcome variable (`SalePrice`), include: mean, median, std, and range.
@@ -148,6 +172,7 @@ i. Create three correlation heatmaps for numeric variables: (1) All numeric feat
 > See Seaborn's [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) and [Fritz' Blog](https://fritz.ai/seaborn-heatmaps-13-ways-to-customize-correlation-matrix-visualizations/).
 
 # Exercise 6 - Fit a Linear Regression, a LASSO and a kNN model
+
 ## Modeling
 
 > [!TIP]
@@ -199,6 +224,7 @@ d. Fit a kNN regression model while considering the following steps:
 > See sklearn's [KNeighborsRegressor()](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html) and article on [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
 # Exercise 7 - Assess which model performs best
+
 ## Evaluation
 
 a. Compare the test performance (RMSLE) across all trained models (e.g., in a summary table or bar chart).
