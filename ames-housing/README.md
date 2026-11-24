@@ -59,12 +59,15 @@ Take the following steps to:
 a. Read the data from `AmesHousing.csv` from your `ames-housing/data/raw/` folder.
 
 > [!TIP]
-> Refer to Pandas' [read_csv()](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) method.
+> See Pandas' [read_csv()](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) method.
+
+> [!TIP]
+> From pathlib import `Path`. Define a variable as `Path('../data/raw')` and use it in `read_csv()` and `read_excel()` below. What is the role of '../'?
 
 b. In the same way read the data from 'Neighborhood names.xlsx' from your `ames-housing/data/raw` folder and merge the two-column table with the Ames Housing data. What is the primary key in 'Neighborhood names.xlsx' and what is the foreign key in 'AmesHousing.csv'? What is their role?
 
 > [!TIP]
-> Refer to Pandas' [read_excel()](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) and [merge()](https://pandas.pydata.org/docs/reference/api/pandas.merge.html#pandas.merge) methods.
+> See Pandas' [read_excel()](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) and [merge()](https://pandas.pydata.org/docs/reference/api/pandas.merge.html#pandas.merge) methods.
 
 # Exercise 2 - Perform descriptive statistics
 
@@ -77,7 +80,7 @@ b. What data types are the variables, and how many are there of each data type?
 c. Split the original dataset into two DataFrames: one containing the numeric variables and one containing the string variables. Which variables belong to each type? Do the shapes of both DataFrames match your answers from the previous two questions?
 
 > [!TIP]
-> Refer to Scikit Learn's [train_test_split()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) method.
+> See Scikit Learn's [train_test_split()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) method.
 
 d. Create a frequency table of missing data per variable for both the numeric and string DataFrames. How many missing values do each of the variables have? Include: variable name, total number of missing values, %completeness, and variable type.
 
@@ -125,7 +128,7 @@ c. Concatenate the imputed numeric and string subsets from exercises (a.) and (b
 d. Reduce memory usage by casting string type to category type data and numeric data to their smallest container size. How much memory do we save by downcasting?
 
 > [!TIP]
-> Refer to Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) function, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method for downcasting.
+> See Pandas' [astype()](https://pandas.pydata.org/docs/user_guide/categorical.html) method and [to_numeric()](https://pandas.pydata.org/docs/reference/api/pandas.to_numeric.html) function, or Polars' [cast()](https://docs.pola.rs/api/python/stable/reference/series/api/polars.Series.cast.html#polars.Series.cast) method for downcasting.
 
 # Exercise 5 - Explore the outcome variable (`SalePrice`) and how it correlates to feature variables
 
@@ -178,6 +181,9 @@ i. Create three correlation heatmaps for numeric variables: (1) All numeric feat
 > [!TIP]
 > Standard regressors minimize squared error (RMSE) on the target scale. How can you trick a standard regressor into optimizing for RMSLE without manually managing transformed target columns? This keeps predicted outcome variables in the orginal unit (USD) and makes interpreting the SHAP (see Exercise 8) much easier, but that's for later. First, check out Scikit-Learn's [`TransformedTargetRegressor()`](https://scikit-learn.org/stable/modules/generated/sklearn.compose.TransformedTargetRegressor.html) paired with input arguments, `func = np.log1p` and `inverse_func = np.expm1`.
 
+> [!TIP]
+> Use sklearn's [root_mean_squared_log_error()](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.root_mean_squared_log_error.html) to calculate RMSLE post prediction. Alternatively, you can use f_evaluate_results() from the `utils_pieter` package; it has two input arguments: `ps_y_true` and `ps_y_pred`. To use this function, copy/paste the `utils_pieter/` folder from `../discover-project-examples/pieterov/code/` into your `../EAISI/ames-housing/code/` folder. Add `from utils_pieter import f_evaluate_results` at the top of your notebook.
+
 > [!TIP] 
 > In this exercise we will fit three different machine learning models. The specific questions are the same in each case. I suggest you read through all questions and design an approach that you can apply to each machine learning model evaluating the given scenarios.
 
@@ -191,7 +197,7 @@ a. Fit a Linear Regression model while considering the following steps:
 
 
 > [!TIP]
-> See sklearn's [`LinearRegression()`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html), article on [Linear Models](https://scikit-learn.org/stable/modules/linear_model.html) and [`OneHotEncoder()`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html). Further, as reference see ['Sklearn Linear Regression: A Complete Guide with Examples' by DataCamp](https://www.datacamp.com/tutorial/sklearn-linear-regression).
+> See sklearn's [`LinearRegression()`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html), [StandardScaler()](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html). Further, see articles on [Linear Models](https://scikit-learn.org/stable/modules/linear_model.html) and ['Sklearn Linear Regression: A Complete Guide with Examples' by DataCamp](https://www.datacamp.com/tutorial/sklearn-linear-regression).
 
 b. Build a pipeline that includes imputation, one-hot encoding, scaling, and a target-transformed linear regression model (optimizing for the log scale of the outcome variable). Train the model on `Overall Qual`, `Gr Liv Area`, `Garage Cars` (numeric variables), and `Neighborhood` (string variable), and evaluate the resulting test predictions using the RMSLE metric.
 
@@ -210,7 +216,7 @@ c. Fit a Lasso regression model while considering the following steps:
   3. Investigate the impact on model performance (RMSLE) when restricting the data to houses with a ground living area below 4,000 sq ft (i.e., `Gr Liv Area` < 4000).
 
 > [!TIP] 
-> See sklearn's [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html) and article on [Lasso](https://scikit-learn.org/stable/modules/linear_model.html#lasso).
+> See sklearn's [LassoCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html) and [`OneHotEncoder()`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html). Further, see article on [Lasso](https://scikit-learn.org/stable/modules/linear_model.html#lasso), .
 
 d. Fit a kNN regression model while considering the following steps:
 
@@ -221,7 +227,7 @@ d. Fit a kNN regression model while considering the following steps:
   3. Investigate the impact on model performance (RMSLE) when restricting the data to houses with a ground living area below 4,000 sq ft (i.e., `Gr Liv Area` < 4000).
 
 > [!TIP]
-> See sklearn's [KNeighborsRegressor()](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html) and article on [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
+> See sklearn's [GridSearchCV()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html), [KNeighborsRegressor()](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html). Further, see article on [Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html).
 
 # Exercise 7 - Assess which model performs best
 
