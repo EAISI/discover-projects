@@ -121,7 +121,7 @@ a. Impute numeric missing values in both the training and test sets using the me
 
 b1. Impute string missing values in both the training and test sets using the label `"other"`.
 
-b2. Alternatively, impute string missing values in both training and test sets using the mode (most frequent value) computed from the training set. In case you use Pandas, why does `df_pd.select_dtypes(include='str').mode()` result in a DataFrame with two rows?
+b2. Alternatively, impute string missing values in both training and test sets using the mode (most frequent value) computed from the training set.
 
 c. Concatenate the imputed numeric and string subsets from exercises (a.) and (b.2) into a combined training set and a combined test set.
 
