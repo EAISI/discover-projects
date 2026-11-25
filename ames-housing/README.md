@@ -79,9 +79,6 @@ b. What data types are the variables, and how many are there of each data type?
 
 c. Split the original dataset into two DataFrames: one containing the numeric variables and one containing the string variables. Which variables belong to each type? Do the shapes of both DataFrames match your answers from the previous two questions?
 
-> [!TIP]
-> See Scikit Learn's [train_test_split()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) method.
-
 d. Create a frequency table of missing data per variable for both the numeric and string DataFrames. How many missing values do each of the variables have? Include: variable name, total number of missing values, %completeness, and variable type.
 
 e. Is `SalePrice` complete?
@@ -107,6 +104,9 @@ a. Split the original dataset into a training set (70%) and a test set (30%). Se
   3. A Series containing the target variable of the training set
 
   4. A Series containing the target variable of the test set
+
+> [!TIP]
+> See Scikit Learn's [train_test_split()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) method.
 
 > [!IMPORTANT]
 > From this point on, all exploratory analysis and calculation of preprocessing statistics (mean, median, mode) must be learned strictly from the training set and then applied to both the training and test sets.
